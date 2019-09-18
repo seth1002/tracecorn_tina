@@ -1,10 +1,11 @@
 # Tracecorn_tina
-This is a modified version of Tracecorn. I just made a few patches and added more AIP hooks. My goal is to unpack emotet layer1 and layer2 packers then extract c2 and rsa key from dump files.
+This is a modified version of Tracecorn - https://github.com/icchy/tracecorn
+I just made a few patches and added more API hooks. My goal is to unpack emotet layer1 and layer2 packers then extract c2 and rsa key from dump files.
 
 Thank you Icchy! Your tracecorn is great!
 
 # Requirements
-tracecorn - https://github.com/icchy/tracecorn
+Unicorn - https://github.com/unicorn-engine/unicorn
 
 # Tricks
 Emotet will start very large loop which cause high CPU usage. I Patched such trash code.
@@ -50,9 +51,9 @@ rsa key:
 30 68 02 61 00 ce 36 ea e3 75 d6 7d 8b 64 39 3f 26 24 bd dd 62 16 1b b7 c6 09 09 8f e2 1e 72 20 95 31 27 0a e3 c2 d1 95 7b 10 9e 94 3d 96 2a b0 f0 f6 c6 bf c4 ac 26 40 a9 37 6f 67 d4 87 09 c7 5e 3a 12 a5 1e e9 2d a0 e8 ee 91 1c 88 90 79 cb a8 63 6c fc ab 49 f2 f7 17 1b bb e0 cd 92 01 2d 00 ae 3d ee 01 02 03 01 00 01 
 ```
 
-test running
+running
 ```
-python emotet_ioc_extractor.py 
+python emotet_ioc_extractor.py {sample file path}
 ['/home/seth1002/project/PeEmu/unitracer/lib/windows/dll']
 GDI32.dll is loaded @ 0x70000000
 SHELL32.dll is loaded @ 0x70047000

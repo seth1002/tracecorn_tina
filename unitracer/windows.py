@@ -312,6 +312,10 @@ class Windows(Unitracer):
         base = self.DLL_CUR
 
         path = self._find_dll(dllname)
+        if path is None:
+            print('Cannot locate dll file:{}'.format(dllname))
+            return 0
+
         dlldata = self._load_dll(path, base, dllname)
         size = align(len(dlldata))
         emu.mem_map(base, size)

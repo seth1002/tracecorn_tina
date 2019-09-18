@@ -331,12 +331,36 @@ def GetProcAddress(ut):
     ut.pushstack(retaddr)
 
 
+def LoadLibraryExA(ut):
+    retaddr = ut.popstack()
+    lpFileName = ut.popstack()
+    hfile = ut.popstack()
+    dwFlags = ut.popstack()
+
+    lpFileName_s = str(ut.getstr(lpFileName)).upper()
+    print('# Load Library:"{0}")'.format(lpFileName_s))
+
+    res = None
+
+    if lpFileName_s in map(lambda x:x[0].upper(), ut.dlls):
+        res = filter(lambda x:x[0].upper()==lpFileName_s, ut.dlls)[0][1]
+    elif lpFileName_s+'.DLL' in map(lambda x:x[0].upper(), ut.dlls):
+        res = filter(lambda x:x[0].upper()==lpFileName_s+'.DLL', ut.dlls)[0][1]
+    else:
+        res = ut.load_dll(lpFileName_s)
+
+    print('LoadLibraryExA (lpLibFileName={:08x} -> "{}") = {:08x} => 0x{:08x}'.format(lpFileName, lpFileName_s, res, retaddr))
+
+    ut.emu.reg_write(UC_X86_REG_EAX, res)
+    ut.pushstack(retaddr)
+
+
 def LoadLibraryA(ut):
     retaddr = ut.popstack()
     lpFileName = ut.popstack()
-    lpFileName_s = str(ut.getstr(lpFileName)).upper()
 
-    print('#Load Library:"{0}")'.format(lpFileName_s))
+    lpFileName_s = str(ut.getstr(lpFileName)).upper()
+    print('# Load Library:"{0}")'.format(lpFileName_s))
 
     res = None
 

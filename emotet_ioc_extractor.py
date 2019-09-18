@@ -109,7 +109,7 @@ def extract_ioc(dump_path, base):
 if __name__ == '__main__':
 
     file_path = sys.argv[1]
-    # file_path = '/mnt/e/Test/emotet/2019_09_17/393.bin'
+    # file_path = './samples/emotet/2019_0918/sha1_f52e80a79f3685b19fa6cd5fecb093ef3b1ae4da'
 
     uni = unitracer.Windows()
     # add search path for dll
@@ -143,8 +143,9 @@ if __name__ == '__main__':
     uni.dump_pe_mem(dump_pe_path)
     uni.dump_heap(dump_heap_path)
 
+    print('\n-----------------------------')
     c2_list , rsa_pub_key = extract_ioc(dump_pe_path, 0x400000)
-    print('c2 list:')
+    print('\nc2 list:')
     for c2 in c2_list:
         print('{}'.format(c2))
 
