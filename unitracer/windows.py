@@ -60,6 +60,7 @@ class Windows(Unitracer):
     user_ins_callback = None
     user_hooks_addr_tb = {}
     api_hooks = {}
+
     hooks = []
     # dll_path = [os.path.join('unitracer', 'lib', 'windows', 'dll')]
     dll_path = [os.path.join(os.path.dirname(os.path.abspath(__file__)), 'lib', 'windows', 'dll')]
@@ -69,8 +70,6 @@ class Windows(Unitracer):
     pe = None
     start_trace = False
 
-    reg_value_map = {'interface\{aa5b6a80-b834-11d0-932f-00a0c90dcaa9}':'IActiveScriptParseProcedure32'}
-    reg_path_handle_map = {}
 
     def __init__(self, os="Windows 7", bits=32, mem_size = 15*1024*1024, emu_time = 60):
         self.process_id = 758
@@ -83,12 +82,25 @@ class Windows(Unitracer):
         self.emu_time = emu_time
 
         self.dll_ord_fun_name_mp = {}
-        self.tls_stors = []
-        self.fls_stors = []
+        self.tls_stors = {}
+        self.fls_stors = {}
 
-        self.command_line = b'C:\\Users\\tina\\Desktop\\wawa.exe\x00'
+        ############################
+        #  OS config
+        ############################
+
+        self.reg_value_map = {'interface\{aa5b6a80-b834-11d0-932f-00a0c90dcaa9}':'IActiveScriptParseProcedure32'}
+        self.reg_path_handle_map = {}
+        self.other_handle_map = {}
+
+        self.command_line = b'C:\\Users\\admin\\AppData\\Local\\easywindow\\easywindow.exe\x00'
+        # self.command_line = b'C:\\Users\\tina\\Desktop\\wawa.exe\x00'
         self.os_environment_wstr = 'ALLUSERSPROFILE=C:\Documents and Settings\All Users'.encode('UTF-16LE')
 
+        self.LPOSVERSIONINFOA = ''
+
+
+        # emu default init
         assert bits == 32, "currently only 32 bit is supported"
 
         self.emu = Uc(UC_ARCH_X86, UC_MODE_32)
@@ -336,8 +348,6 @@ class Windows(Unitracer):
         data = bytearray(dll.mapped_data)
 
         self.dll_ord_fun_name_mp[self.DLL_CUR] = dll.dll_ord_exp_name
-        # with open('dump.tmp', 'wb') as fh:
-        #     fh.write(str(dll.dll_ord_exp_name))
 
         # patch all exported fun with 0xc3, just return
         for name, addr in dll.exports.items():
@@ -345,8 +355,12 @@ class Windows(Unitracer):
             vaddr = dll.nt_header.OptionalHeader.DataDirectory[0].VirtualAddress
             size = dll.nt_header.OptionalHeader.DataDirectory[0].Size
             if addr > vaddr and addr < vaddr+size:
-                # skip fwd import funcitons
-                pass
+                # Bug
+                # TO DO: get reall fun addr, hook the real functions address
+                # fwd import funcitons
+                data[addr] = '\xc3'
+                dll_funcs[name] = base + addr
+                dll_funcs_addrs_fast_tb[base+addr] = name
             else:
                 data[addr] = '\xc3'
                 dll_funcs[name] = base + addr

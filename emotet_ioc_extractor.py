@@ -60,10 +60,14 @@ def myins_callback(ut, address, size, userdata):
 
             if ', 0x' in ins and 'cmp' in ins:
                 counter = int(ins.split(', 0x')[1], 16)
+                if counter > ut.ADDRESS and counter < ut.ADDRESS+ut.size: return
                 if counter > 100000 and counter < 400000000:
                     print('# patch to bypass trash code -> {}'.format(ins))
                     inss = '\x83\xfc\00'+'\x90'*(insn.size-3)
                     ut.emu.mem_write(address, inss)
+    
+    # if address == 0x0040B97A:
+    #     ut.emu.reg_write(UC_X86_REG_EAX, 1)
 
 
 def extract_ioc(dump_path, base):
@@ -108,10 +112,17 @@ def extract_ioc(dump_path, base):
  
 if __name__ == '__main__':
 
+
+
     file_path = sys.argv[1]
-    # file_path = './samples/emotet/2019_0918/sha1_f52e80a79f3685b19fa6cd5fecb093ef3b1ae4da'
+   
+    # file_path = './samples/emotet/2019_0920/sha1_4d95854d87ab6397b48de09558255e257d4f644d'
 
     uni = unitracer.Windows()
+    uni.verbose = False 
+    # if sys.argv[2] == 1:
+    #     verbos = True
+
     # add search path for dll
     uni.dll_path.insert(0, "dlls")
 
@@ -123,7 +134,6 @@ if __name__ == '__main__':
 
     # set my ins hook
     uni.user_ins_callback = myins_callback
-    uni.verbose = False 
 
     import datetime
     start = datetime.datetime.now() 

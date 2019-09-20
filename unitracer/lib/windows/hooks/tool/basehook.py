@@ -6267,6 +6267,13 @@ InterlockedDecrement = Hook('InterlockedDecrement', 'LONG', [['LPLONG', 'lpAdden
 HeapSize = Hook('HeapSize', 'int', [['HANDLE', 'hHeap'], ['DWORD', 'dwFlags'], ['LPCVOID', 'lpMem']])
 RtlAllocateHeap = Hook('RtlAllocateHeap', 'PVOID', [['PVOID', 'HeapHandle'], ['ULONG', 'Flags'], ['SIZE_T', 'Size']])
 memset = Hook('memset', 'void', [['void *', 'ptr'], ['int', 'value'], ['size_t', 'num']])
+PathFindExtensionA = Hook('PathFindExtensionA', 'LPCSTR', [['LPCSTR', 'pszPath']])
+PathFindFileNameA = Hook('PathFindFileNameA', 'LPCSTR', [['LPCSTR', 'pszPath']])
+lstrcpyn = Hook('lstrcpyn', 'LPTSTR', [['LPTSTR', 'lpStr1'], ['LPTSTR', 'lpStr2'], ['int', 'iMaxLength']])
+lstrcpy = Hook('lstrcpy', 'LPTSTR', [['LPTSTR', 'lpString1'], ['LPCTSTR', 'lpString2']])
+lstrcat = Hook('lstrcat', 'LPTSTR', [['LPTSTR', 'lpString2'], ['LPCTSTR', 'lpString2']])
+FlsFree = Hook('FlsFree', 'BOOL', [['DWORD', 'dwFlsIndex']])
+
 
 # special hooks, you also need to add import statement in '__init__.py'
 __p__fmode = Hook('__p__fmode', 'UINT', [])
