@@ -397,7 +397,7 @@ def lstrcat(ut):
     lpString1_s = ut.getstr(lpString1)
     lpString2_s = ut.getstr(lpString2)
 
-    emu.mem_write(lpString1+len(lpString1_s), str(lpString2_s))
+    emu.mem_write(lpString1+len(lpString1_s), bytes(lpString2_s+b'\x00'))
     ret_str = str(ut.getstr(lpString1))
     print 'lstrcat (0x{:08x} -> "{}", 0x{:08x} -> "{}") = 0x{:08x} -> "{}" => 0x{:08x}'.format(
         lpString1, lpString1_s, lpString2, lpString2_s, lpString1, ret_str, retaddr)

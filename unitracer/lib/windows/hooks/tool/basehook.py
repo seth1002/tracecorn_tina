@@ -6273,6 +6273,7 @@ lstrcpyn = Hook('lstrcpyn', 'LPTSTR', [['LPTSTR', 'lpStr1'], ['LPTSTR', 'lpStr2'
 lstrcpy = Hook('lstrcpy', 'LPTSTR', [['LPTSTR', 'lpString1'], ['LPCTSTR', 'lpString2']])
 lstrcat = Hook('lstrcat', 'LPTSTR', [['LPTSTR', 'lpString2'], ['LPCTSTR', 'lpString2']])
 FlsFree = Hook('FlsFree', 'BOOL', [['DWORD', 'dwFlsIndex']])
+InterlockedExchange = Hook('InterlockedExchange', 'LONG', [['unsigned volatile *', 'Addend'], ['unsigned', 'Value']])
 
 
 # special hooks, you also need to add import statement in '__init__.py'

@@ -124,5 +124,32 @@ def RegQueryValueExA(ut):
     ut.pushstack(retaddr)
 
 
+def CryptAcquireContextA(ut):
+    retaddr = ut.popstack()
+    phProv = ut.popstack()
+
+    szContainer = ut.popstack()
+    str1 = ''
+    if szContainer != 0:
+        str1 = ut.getstr(szContainer)
+
+    szProvider = ut.popstack()
+    str2 = ''
+    if szProvider != 0:
+        str2 = ut.getstr(szProvider)
+
+    dwProvType = ut.popstack()
+    dwFlags = ut.popstack()
+
+    res = 1
+
+    print('CryptAcquireContextA(0x{:08x}, 0x{:08x}="{}", 0x{:08x}="{}", 0x{:08x}, 0x{:08x}) = {} =>0x{:08x}'.format(
+        phProv, szContainer, str1, szProvider, str2, dwProvType, dwFlags, res, retaddr
+    ))
+
+    ut.emu.reg_write(UC_X86_REG_EAX, res)
+    ut. pushstack(retaddr)
+ 
+
 hooks = set(vars().keys()).difference(hooks)
 hooks = [_x for _x in hooks if not _x.startswith('_')]
