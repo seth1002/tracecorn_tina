@@ -6275,6 +6275,7 @@ lstrcat = Hook('lstrcat', 'LPTSTR', [['LPTSTR', 'lpString2'], ['LPCTSTR', 'lpStr
 FlsFree = Hook('FlsFree', 'BOOL', [['DWORD', 'dwFlsIndex']])
 strlen = Hook('strlen', 'szie_t', [['char *', 'str']])
 malloc = Hook('malloc', 'void *', [['size_t', 'size']])
+InterlockedExchange = Hook('InterlockedExchange', 'LONG', [['unsigned volatile *', 'Addend'], ['unsigned', 'Value']])
 
 
 # special hooks, you also need to add import statement in '__init__.py'
