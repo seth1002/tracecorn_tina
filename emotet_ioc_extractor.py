@@ -119,7 +119,7 @@ if __name__ == '__main__':
     # file_path = './samples/emotet/2019_0920/sha1_4d95854d87ab6397b48de09558255e257d4f644d'
 
     uni = unitracer.Windows()
-    uni.verbose = False 
+    uni.verbose = True 
     # if sys.argv[2] == 1:
     #     verbos = True
 

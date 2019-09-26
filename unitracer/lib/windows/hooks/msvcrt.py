@@ -77,4 +77,27 @@ def memset(ut):
  
     ut.pushstack(retaddr)
 
+
+def malloc(ut):
+    retaddr = ut.popstack()
+    size = ut.popstack()
+    lpMem = ut.heap_alloc(size)
+
+    print('malloc(0x{:08x}) = 0x{:08x} => 0x{:08x}'.format(size, lpMem, retaddr))
+ 
+    ut.emu.reg_write(UC_X86_REG_EAX, lpMem)
+    ut.pushstack(retaddr)
+
+
+def strlen(ut):
+    retaddr = ut.popstack()
+    lpStr = ut.popstack()
+    _str = ut.getstr(lpStr)
+    _len = len(_str)
+
+    print('strlen(0x{:08x} -> "{}") = 0x{:08x} => 0x{:08x}'.format(lpStr, _str, _len, retaddr))
+ 
+    ut.emu.reg_write(UC_X86_REG_EAX, _len)
+
+
 hooks = set(vars().keys()).difference(hooks)

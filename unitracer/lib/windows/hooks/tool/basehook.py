@@ -6273,9 +6273,12 @@ lstrcpyn = Hook('lstrcpyn', 'LPTSTR', [['LPTSTR', 'lpStr1'], ['LPTSTR', 'lpStr2'
 lstrcpy = Hook('lstrcpy', 'LPTSTR', [['LPTSTR', 'lpString1'], ['LPCTSTR', 'lpString2']])
 lstrcat = Hook('lstrcat', 'LPTSTR', [['LPTSTR', 'lpString2'], ['LPCTSTR', 'lpString2']])
 FlsFree = Hook('FlsFree', 'BOOL', [['DWORD', 'dwFlsIndex']])
+strlen = Hook('strlen', 'szie_t', [['char *', 'str']])
+malloc = Hook('malloc', 'void *', [['size_t', 'size']])
 
 
 # special hooks, you also need to add import statement in '__init__.py'
+_isctype = Hook('_isctype', 'int', [['int', 'c'], ['_ctype_t', 'desc']])
 __p__fmode = Hook('__p__fmode', 'UINT', [])
 __getmainargs = Hook('__getmainargs', 'UINT', [['int *', '_Argc'], ['char ***', '_Argv'], ['char ***', '_Env'], ['int', '_DoWildCard'], ['_startupinfo *', '_StartInfo']])
 __set_app_type = Hook('__set_app_type', 'VOID', [['int', 'at']])

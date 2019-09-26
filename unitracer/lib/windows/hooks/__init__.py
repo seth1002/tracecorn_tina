@@ -24,6 +24,7 @@ from .tool.basehook import __p__commode
 from .tool.basehook import __setusermatherr
 from .tool.basehook import _controlfp
 from .tool.basehook import _initterm
+from .tool.basehook import _isctype
 
 # load defined hooks
 for f in os.listdir(os.path.dirname(__file__)):
