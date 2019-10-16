@@ -1,0 +1,660 @@
+['/home/seth1002/project/PeEmu/unitracer/lib/windows/dll']
+comdlg32.dll is loaded @ 0x70000000
+OLEAUT32.dll is loaded @ 0x70049000
+GDI32.dll is loaded @ 0x700d5000
+SHELL32.dll is loaded @ 0x7011c000
+KERNEL32.dll is loaded @ 0x70931000
+WINSPOOL.DRV is loaded @ 0x70a05000
+ADVAPI32.dll is loaded @ 0x70a2b000
+ole32.dll is loaded @ 0x70ac6000
+SHLWAPI.dll is loaded @ 0x70c03000
+OLEACC.dll is loaded @ 0x70c79000
+USER32.dll is loaded @ 0x70cb5000
+COMCTL32.dll is loaded @ 0x70d45000
+ntdll.dll is loaded @ 0x70ddc000
+stack: 0x5ff00000-0x60000000
+GetVersionExA(5ffffed8) = 1db10106 => 0040b870
+GetModuleHandleA(lpModuleName=0x00000000:"") = 0x00400000 => 0x0040b8bf
+HeapCreate(0, 1000, 0) = d52a00
+GetModuleHandleA(lpModuleName=0x004531a4:"kernel32.dll") = 0x70931000 => 0x00412efd
+GetProcAddress (hModule=0x70931000, lpProcName=0x00456c18:"InitializeCriticalSectionAndSpinCount") = 0x70984939 => 0x00412f0d
+InitializeCriticalSectionAndSpinCount(004659e8, 00000fa0) = 00000001 => 00412f2c
+InitializeCriticalSectionAndSpinCount(00465a00, 00000fa0) = 00000001 => 00412f2c
+InitializeCriticalSectionAndSpinCount(00465a18, 00000fa0) = 00000001 => 00412f2c
+InitializeCriticalSectionAndSpinCount(00465a30, 00000fa0) = 00000001 => 00412f2c
+InitializeCriticalSectionAndSpinCount(00465a48, 00000fa0) = 00000001 => 00412f2c
+InitializeCriticalSectionAndSpinCount(00465a60, 00000fa0) = 00000001 => 00412f2c
+InitializeCriticalSectionAndSpinCount(00465a78, 00000fa0) = 00000001 => 00412f2c
+InitializeCriticalSectionAndSpinCount(00465a90, 00000fa0) = 00000001 => 00412f2c
+InitializeCriticalSectionAndSpinCount(00465aa8, 00000fa0) = 00000001 => 00412f2c
+InitializeCriticalSectionAndSpinCount(00465ac0, 00000fa0) = 00000001 => 00412f2c
+InitializeCriticalSectionAndSpinCount(00465ad8, 00000fa0) = 00000001 => 00412f2c
+InitializeCriticalSectionAndSpinCount(00465af0, 00000fa0) = 00000001 => 00412f2c
+InitializeCriticalSectionAndSpinCount(00465b08, 00000fa0) = 00000001 => 00412f2c
+InitializeCriticalSectionAndSpinCount(00465b20, 00000fa0) = 00000001 => 00412f2c
+TlsAlloc() = 0 => 0x0040e77f
+HeapAlloc(00d52a00, 00000008, 00000088) = 0x00d53a00 => 0x0040cec4
+TlsSetValue(dwTlsIndex = 0, lpTlsValue = 00d53a00) => 0x0040e7b3
+GetCurrentThreadId() = 6674
+HeapAlloc(00d52a00, 00000000, 00000480) = 0x00d53b00 => 0x00409f34
+Unhooked function: GetStartupInfoA (0x5ffffe90)
+Unhooked function: GetStdHandle (0xfffffff6)
+Unhooked function: GetFileType (0x00000000)
+Unhooked function: GetStdHandle (0xfffffff5)
+Unhooked function: GetFileType (0x00000000)
+Unhooked function: GetStdHandle (0xfffffff4)
+Unhooked function: GetFileType (0x00000000)
+Unhooked function: SetHandleCount (0x00000020)
+GetCommandLineA() = 0x0001b000:C:\Users\admin\AppData\Local\easywindow\easywindow.exe => 0x0040b955
+GetEnvironmentStringsW() = 0x0001c000:"ALLUSERSPROFILE=C:\Documents and Settings\All Use" => 0x00411591
+WideCharToMultiByte()
+HeapAlloc(00d52a00, 00000000, 00000035) = 0x00d54000 => 0x00409f34
+WideCharToMultiByte()
+FreeEnvironmentStringsW(0x0001c000) = 0x00000001 => 0x0041163a
+Unhooked function: EnterCriticalSection (0x00465ac0)
+GetACP() = 0x000003a8 => 0x0040c720
+HeapAlloc(00d52a00, 00000000, 00000220) = 0x00d54100 => 0x00409f34
+GetCPInfo(0x000003a8, 0x5ffffe28) = 0x00000001 => 0x0040c35c
+GetStringTypeW(0x00000001, 0x00456b7c, 0x00000001, 0x5ffff8e4) = 0x00000001 => 0x00412972
+Unhooked function: MultiByteToWideChar (0x000003a8, 0x00000001, 0x5ffffd28, 0x00000100, 0x00000000, 0x00000000)
+LCMapStringW(0x00000000, 0x00000100, 0x00456b7c, 0x00000001) = 0x00000001 => 0x004125b9
+Unhooked function: MultiByteToWideChar (0x000003a8, 0x00000001, 0x5ffffd28, 0x00000100, 0x00000000, 0x00000000)
+Unhooked function: MultiByteToWideChar (0x000003a8, 0x00000001, 0x5ffffd28, 0x00000100, 0x00000000, 0x00000000)
+Unhooked function: LeaveCriticalSection (0x00465ac0)
+GetModuleFileNameA(0x00000000, lpString=0x00465c30 -> "C:\Users\admin\AppData\Local\easywindow\easywindow.exe", 0x00000104) = 00000036 => 0x00411501
+HeapAlloc(00d52a00, 00000000, 0000003f) = 0x00d54400 => 0x00409f34
+HeapAlloc(00d52a00, 00000000, 00000008) = 0x00d54500 => 0x00409f34
+HeapAlloc(00d52a00, 00000000, 00000034) = 0x00d54600 => 0x00409f34
+Unhooked function: HeapFree (0x00d52a00, 0x00000000, 0x00d54000)
+GetModuleHandleA(lpModuleName=0x00452110:"KERNEL32.DLL") = 0x70931000 => 0x00410292
+GetProcAddress (hModule=0x70931000, lpProcName=0x00456798:"IsProcessorFeaturePresent") = 0x709886b5 => 0x004102a2
+Unhooked function: IsProcessorFeaturePresent (0x00000000)
+HeapAlloc(00d52a00, 00000000, 00000080) = 0x00d54700 => 0x00409f34
+HeapAlloc(00d52a00, 00000008, 00000800) = 0x00d54800 => 0x0040cec4
+Unhooked function: SetUnhandledExceptionFilter (0x00410468)
+Unhooked function: EnterCriticalSection (0x00465a78)
+HeapSize(00d52a00, 00000000, 00d54700) = 0x00000100 => 0x0040cba4
+Unhooked function: LeaveCriticalSection (0x00465a78)
+Unhooked function: GetSystemTimeAsFileTime (0x5ffffebc)
+GetCurrentProcessId() = 758
+GetCurrentThreadId() = 6674
+GetTickCount() = 6261630 => 0x0040cf4e
+Unhooked function: QueryPerformanceCounter (0x5ffffeb4)
+Unhooked function: EnterCriticalSection (0x00465a78)
+HeapSize(00d52a00, 00000000, 00d54700) = 0x00000100 => 0x0040cba4
+Unhooked function: LeaveCriticalSection (0x00465a78)
+Unhooked function: EnterCriticalSection (0x00465a78)
+HeapSize(00d52a00, 00000000, 00d54700) = 0x00000100 => 0x0040cba4
+Unhooked function: LeaveCriticalSection (0x00465a78)
+Unhooked function: InterlockedIncrement (0x00462f48)
+Unhooked function: InitializeCriticalSection (0x00465ee8)
+Unhooked function: InitializeCriticalSection (0x00465f00)
+Unhooked function: InitializeCriticalSection (0x00465f18)
+Unhooked function: InitializeCriticalSection (0x00465f30)
+Unhooked function: EnterCriticalSection (0x00465a78)
+HeapSize(00d52a00, 00000000, 00d54700) = 0x00000100 => 0x0040cba4
+Unhooked function: LeaveCriticalSection (0x00465a78)
+HeapAlloc(00d52a00, 00000000, 00000018) = 0x00d55000 => 0x00409f34
+Unhooked function: InitializeCriticalSection (0x00d55000)
+HeapAlloc(00d52a00, 00000000, 00000004) = 0x00d55100 => 0x00409f34
+Unhooked function: EnterCriticalSection (0x00465ee8)
+HeapAlloc(00d52a00, 00000000, 00000034) = 0x00d55200 => 0x00409f34
+Unhooked function: EnterCriticalSection (0x00465ee8)
+Unhooked function: LeaveCriticalSection (0x00465ee8)
+Unhooked function: LeaveCriticalSection (0x00465ee8)
+Unhooked function: EnterCriticalSection (0x00465ee8)
+Unhooked function: LeaveCriticalSection (0x00465ee8)
+Unhooked function: EnterCriticalSection (0x00465ee8)
+Unhooked function: LeaveCriticalSection (0x00465ee8)
+Unhooked function: EnterCriticalSection (0x00465a78)
+HeapSize(00d52a00, 00000000, 00d54700) = 0x00000100 => 0x0040cba4
+Unhooked function: LeaveCriticalSection (0x00465a78)
+HeapAlloc(00d52a00, 00000000, 00000004) = 0x00d55300 => 0x00409f34
+Unhooked function: EnterCriticalSection (0x00465ee8)
+Unhooked function: LeaveCriticalSection (0x00465ee8)
+Unhooked function: EnterCriticalSection (0x00465a78)
+HeapSize(00d52a00, 00000000, 00d54700) = 0x00000100 => 0x0040cba4
+Unhooked function: LeaveCriticalSection (0x00465a78)
+Unhooked function: InterlockedIncrement (0x00462f48)
+Unhooked function: InitializeCriticalSection (0x00465ee8)
+Unhooked function: InitializeCriticalSection (0x00465f00)
+Unhooked function: InitializeCriticalSection (0x00465f18)
+Unhooked function: InitializeCriticalSection (0x00465f30)
+Unhooked function: EnterCriticalSection (0x00465a78)
+HeapSize(00d52a00, 00000000, 00d54700) = 0x00000100 => 0x0040cba4
+Unhooked function: LeaveCriticalSection (0x00465a78)
+Unhooked function: EnterCriticalSection (0x00465a78)
+HeapSize(00d52a00, 00000000, 00d54700) = 0x00000100 => 0x0040cba4
+Unhooked function: LeaveCriticalSection (0x00465a78)
+Unhooked function: EnterCriticalSection (0x00465a78)
+HeapSize(00d52a00, 00000000, 00d54700) = 0x00000100 => 0x0040cba4
+Unhooked function: LeaveCriticalSection (0x00465a78)
+GetVersionExA(5ffffe28) = 1db10106 => 0042a4c0
+Unhooked function: InitializeCriticalSection (0x00466114)
+Unhooked function: EnterCriticalSection (0x00465a78)
+HeapSize(00d52a00, 00000000, 00d54700) = 0x00000100 => 0x0040cba4
+Unhooked function: LeaveCriticalSection (0x00465a78)
+TlsAlloc() = 1 => 0x004466f0
+Unhooked function: InitializeCriticalSection (0x0046570c)
+Unhooked function: EnterCriticalSection (0x0046570c)
+GlobalAlloc(00000002, 00000100) = 0x00d55400 => 0x0044650b
+GlobalLock(00d55400) = 0x00d55400 => 0x00446563
+Unhooked function: LeaveCriticalSection (0x0046570c)
+TlsGetValue(dwTlsIndex = 1) = 00000000) => 0x004465b9
+LocalAlloc(00000040, 00000104) = 0x00d55500 => 0x00446483
+TlsGetValue(dwTlsIndex = 1) = 00000000) => 0x00446771
+LocalAlloc(00000040, 00000010) = 0x00d55700 => 0x00446483
+Unhooked function: EnterCriticalSection (0x0046570c)
+Unhooked function: LeaveCriticalSection (0x0046570c)
+LocalAlloc(00000000, 00000008) = 0x00d55800 => 0x004467e4
+TlsSetValue(dwTlsIndex = 1, lpTlsValue = 00d55700) => 0x0044682d
+Unhooked function: InitializeCriticalSection (0x0046576c)
+Unhooked function: EnterCriticalSection (0x0046576c)
+Unhooked function: InitializeCriticalSection (0x00465908)
+Unhooked function: LeaveCriticalSection (0x0046576c)
+Unhooked function: EnterCriticalSection (0x00465908)
+LocalAlloc(00000040, 00001074) = 0x00d55900 => 0x00446483
+Unhooked function: LeaveCriticalSection (0x00465908)
+Unhooked function: EnterCriticalSection (0x00465ac0)
+GetACP() = 0x000003a8 => 0x0040c720
+Unhooked function: LeaveCriticalSection (0x00465ac0)
+Unhooked function: EnterCriticalSection (0x00465a78)
+HeapSize(00d52a00, 00000000, 00d54700) = 0x00000100 => 0x0040cba4
+Unhooked function: LeaveCriticalSection (0x00465a78)
+TlsGetValue(dwTlsIndex = 1) = 00d55700) => 0x004465b9
+Unhooked function: GetCursorPos (0x00d5554c)
+TlsGetValue(dwTlsIndex = 1) = 00d55700) => 0x004465b9
+Unhooked function: EnterCriticalSection (0x0046570c)
+Unhooked function: LeaveCriticalSection (0x0046570c)
+TlsGetValue(dwTlsIndex = 1) = 00d55700) => 0x004465b9
+LocalAlloc(00000040, 00000080) = 0x00d56a00 => 0x00446483
+TlsGetValue(dwTlsIndex = 1) = 00d55700) => 0x00446771
+LocalReAlloc(0x00d55800, 0x0000000c, 0x00000002) = 0x00d56b00 => 0x004467f6
+TlsSetValue(dwTlsIndex = 1, lpTlsValue = 00d55700) => 0x0044682d
+Unhooked function: GetCurrentThread ()
+GetCurrentThreadId() = 6674
+Unhooked function: EnterCriticalSection (0x00465a78)
+HeapSize(00d52a00, 00000000, 00d54700) = 0x00000100 => 0x0040cba4
+Unhooked function: LeaveCriticalSection (0x00465a78)
+Unhooked function: EnterCriticalSection (0x00465a78)
+HeapSize(00d52a00, 00000000, 00d54700) = 0x00000100 => 0x0040cba4
+Unhooked function: LeaveCriticalSection (0x00465a78)
+Unhooked function: RegisterWindowMessageA (0x00451954)
+Unhooked function: EnterCriticalSection (0x00465a78)
+HeapSize(00d52a00, 00000000, 00d54700) = 0x00000100 => 0x0040cba4
+Unhooked function: LeaveCriticalSection (0x00465a78)
+Unhooked function: EnterCriticalSection (0x00465a78)
+HeapSize(00d52a00, 00000000, 00d54700) = 0x00000100 => 0x0040cba4
+Unhooked function: LeaveCriticalSection (0x00465a78)
+Unhooked function: EnterCriticalSection (0x00465a78)
+HeapSize(00d52a00, 00000000, 00d54700) = 0x00000100 => 0x0040cba4
+Unhooked function: LeaveCriticalSection (0x00465a78)
+Unhooked function: EnterCriticalSection (0x00465a78)
+HeapSize(00d52a00, 00000000, 00d54700) = 0x00000100 => 0x0040cba4
+Unhooked function: LeaveCriticalSection (0x00465a78)
+Unhooked function: EnterCriticalSection (0x00465a78)
+HeapSize(00d52a00, 00000000, 00d54700) = 0x00000100 => 0x0040cba4
+Unhooked function: LeaveCriticalSection (0x00465a78)
+Unhooked function: EnterCriticalSection (0x00465a78)
+HeapSize(00d52a00, 00000000, 00d54700) = 0x00000100 => 0x0040cba4
+Unhooked function: LeaveCriticalSection (0x00465a78)
+Unhooked function: EnterCriticalSection (0x00465a78)
+HeapSize(00d52a00, 00000000, 00d54700) = 0x00000100 => 0x0040cba4
+Unhooked function: LeaveCriticalSection (0x00465a78)
+Unhooked function: EnterCriticalSection (0x00465a78)
+HeapSize(00d52a00, 00000000, 00d54700) = 0x00000100 => 0x0040cba4
+Unhooked function: LeaveCriticalSection (0x00465a78)
+GetVersion()
+GetVersion()
+GetVersion()
+GetVersion()
+Unhooked function: GetSystemMetrics (0x0000000b)
+Unhooked function: GetSystemMetrics (0x0000000c)
+Unhooked function: GetSystemMetrics (0x00000002)
+Unhooked function: GetSystemMetrics (0x00000003)
+Unhooked function: GetDC (0x00000000)
+Unhooked function: GetDeviceCaps (0x00000000, 0x00000058)
+Unhooked function: GetDeviceCaps (0x00000000, 0x0000005a)
+Unhooked function: ReleaseDC (0x00000000, 0x00000000)
+Unhooked function: GetSysColor (0x0000000f)
+Unhooked function: GetSysColor (0x00000010)
+Unhooked function: GetSysColor (0x00000014)
+Unhooked function: GetSysColor (0x00000012)
+Unhooked function: GetSysColor (0x00000006)
+Unhooked function: GetSysColorBrush (0x0000000f)
+Unhooked function: GetSysColorBrush (0x00000006)
+Unhooked function: LoadCursorA (0x00000000, 0x00007f02)
+Unhooked function: LoadCursorA (0x00000000, 0x00007f00)
+Unhooked function: EnterCriticalSection (0x00465a78)
+HeapSize(00d52a00, 00000000, 00d54700) = 0x00000100 => 0x0040cba4
+Unhooked function: LeaveCriticalSection (0x00465a78)
+Unhooked function: GetOEMCP ()
+GetCPInfo(0x00000000, 0x5ffffea8) = 0x00000001 => 0x00446bb5
+Unhooked function: RegisterWindowMessageA (0x004557d4)
+Unhooked function: RegisterWindowMessageA (0x004558c0)
+Unhooked function: RegisterWindowMessageA (0x004558b4)
+Unhooked function: RegisterWindowMessageA (0x004558a8)
+Unhooked function: RegisterWindowMessageA (0x00455898)
+Unhooked function: RegisterWindowMessageA (0x00455888)
+Unhooked function: RegisterWindowMessageA (0x0045587c)
+Unhooked function: RegisterWindowMessageA (0x00455868)
+Unhooked function: RegisterWindowMessageA (0x00455850)
+Unhooked function: RegisterWindowMessageA (0x00455844)
+Unhooked function: RegisterWindowMessageA (0x00455838)
+Unhooked function: RegisterWindowMessageA (0x00455824)
+Unhooked function: RegisterWindowMessageA (0x00455808)
+Unhooked function: InterlockedIncrement (0x00462f48)
+Unhooked function: InitializeCriticalSection (0x00465ee8)
+Unhooked function: InitializeCriticalSection (0x00465f00)
+Unhooked function: InitializeCriticalSection (0x00465f18)
+Unhooked function: InitializeCriticalSection (0x00465f30)
+Unhooked function: EnterCriticalSection (0x00465a78)
+HeapSize(00d52a00, 00000000, 00d54700) = 0x00000100 => 0x0040cba4
+Unhooked function: LeaveCriticalSection (0x00465a78)
+Unhooked function: EnterCriticalSection (0x00465a78)
+HeapSize(00d52a00, 00000000, 00d54700) = 0x00000100 => 0x0040cba4
+Unhooked function: LeaveCriticalSection (0x00465a78)
+Unhooked function: GetStartupInfoA (0x5fffff84)
+GetModuleHandleA(lpModuleName=0x00000000:"") = 0x00400000 => 0x0040b9c5
+TlsGetValue(dwTlsIndex = 1) = 00d55700) => 0x004465b9
+TlsGetValue(dwTlsIndex = 1) = 00d55700) => 0x004465b9
+TlsGetValue(dwTlsIndex = 1) = 00d55700) => 0x004465b9
+Unhooked function: SetErrorMode (0x00000000)
+Unhooked function: SetErrorMode (0x00008001)
+TlsGetValue(dwTlsIndex = 1) = 00d55700) => 0x004465b9
+TlsGetValue(dwTlsIndex = 1) = 00d55700) => 0x004465b9
+TlsGetValue(dwTlsIndex = 1) = 00d55700) => 0x004465b9
+GetModuleFileNameA(0x00400000, lpString=0x5ffffc88 -> "C:\Users\admin\AppData\Local\easywindow\easywindow.exe", 0x00000104) = 00000036 => 0x004473cc
+PathFindExtensionA(0x5ffffc88 -> "C:\Users\admin\AppData\Local\easywindow\easywindow.exe") = 0x5ffffcba => 0x004473d9
+PathFindFileNameA(0x5ffffc88 -> "C:\Users\admin\AppData\Local\easywindow\easywindow") = 0x5ffffcb0 => 0x00447365
+lstrcpyn (0x5ffffd8c, 0x5ffffcb0 -> "easywindow", 0x00000104) = 0x5ffffd8c -> "easywindow" => 0x00447385
+HeapAlloc(00d52a00, 00000000, 0000000b) = 0x00d56d00 => 0x00409f34
+TlsGetValue(dwTlsIndex = 1) = 00d55700) => 0x004465b9
+FindResourceA(0x00400000, 0x00000e01, 0x00000006) = 0x00000001 => 0x00409034
+LoadResourceA(0x00400000, 0x00000001) = 0x00d56e00 => 0x00402cd4
+LockResourceA(0x00d56e00) = 0x00d56e00 => 0x00402cee
+SizeofResourceA(0x00400000, 0x00000001) = 0x00000050 => 0x00402d09
+WideCharToMultiByte()
+HeapAlloc(00d52a00, 00000000, 00000014) = 0x00d56f00 => 0x00409f34
+lstrcpy (0x5ffffcba, 0x00454b34 -> ".HLP") = 0x5ffffcba -> ".HLP" => 0x00447464
+HeapAlloc(00d52a00, 00000000, 00000037) = 0x00d57000 => 0x00409f34
+lstrcat (0x5ffffd8c -> "easywindow", 0x00454b2c -> ".INI") = 0x5ffffd8c -> "easywindow.INI" => 0x00447491
+HeapAlloc(00d52a00, 00000000, 0000000f) = 0x00d57100 => 0x00409f34
+TlsGetValue(dwTlsIndex = 1) = 00d55700) => 0x004465b9
+TlsGetValue(dwTlsIndex = 1) = 00d55700) => 0x004465b9
+TlsGetValue(dwTlsIndex = 1) = 00d55700) => 0x004465b9
+GetCurrentThreadId() = 6674
+Unhooked function: SetWindowsHookExA (0xffffffff, 0x00432643, 0x00000000, 0x00001a12)
+GetModuleHandleA(lpModuleName=0x00454b54:"user32.dll") = 0x70cb5000 => 0x00447513
+GetProcAddress (hModule=0x70cb5000, lpProcName=0x00454b44:"NotifyWinEvent") = 0x70cc0ff3 => 0x00447523
+Unhooked function: RegOpenKeyExA (0x80000001, 0x004532b8, 0x00000000, 0x00000001, 0x5ffffea4)
+RegQueryValueExA (hKey=0x00000000, lpValueName=0x004532b0:"NoRun", lpReserved=0x00000000, lpValueType=0x5ffffe9c, lpBuffer=5ffffea0:"", lpBufSize=5ffffe94:0) = 0 => 00444a5f
+RegQueryValueExA (hKey=0x00000000, lpValueName=0x004532a4:"NoDrives", lpReserved=0x00000000, lpValueType=0x5ffffe9c, lpBuffer=5ffffea0:"", lpBufSize=5ffffe94:0) = 0 => 00444a5f
+RegQueryValueExA (hKey=0x00000000, lpValueName=0x00453298:"RestrictRun", lpReserved=0x00000000, lpValueType=0x5ffffe9c, lpBuffer=5ffffea0:"", lpBufSize=5ffffe94:0) = 0 => 00444a5f
+RegQueryValueExA (hKey=0x00000000, lpValueName=0x00453280:"NoNetConnectDisconnect", lpReserved=0x00000000, lpValueType=0x5ffffe9c, lpBuffer=5ffffea0:"", lpBufSize=5ffffe94:0) = 0 => 00444a5f
+RegQueryValueExA (hKey=0x00000000, lpValueName=0x0045326c:"NoRecentDocsHistory", lpReserved=0x00000000, lpValueType=0x5ffffe9c, lpBuffer=5ffffea0:"", lpBufSize=5ffffe94:0) = 0 => 00444a5f
+RegQueryValueExA (hKey=0x00000000, lpValueName=0x00453264:"NoClose", lpReserved=0x00000000, lpValueType=0x5ffffe9c, lpBuffer=5ffffea0:"", lpBufSize=5ffffe94:0) = 0 => 00444a5f
+RegCloseKey (hKey=0x0)
+Unhooked function: RegOpenKeyExA (0x80000001, 0x00453228, 0x00000000, 0x00000001, 0x5ffffea4)
+RegQueryValueExA (hKey=0x00000000, lpValueName=0x00453218:"NoEntireNetwork", lpReserved=0x00000000, lpValueType=0x5ffffe9c, lpBuffer=5ffffea0:"", lpBufSize=5ffffe94:0) = 0 => 00444a5f
+RegCloseKey (hKey=0x0)
+Unhooked function: RegOpenKeyExA (0x80000001, 0x004531dc, 0x00000000, 0x00000001, 0x5ffffea4)
+RegQueryValueExA (hKey=0x00000000, lpValueName=0x004531d0:"NoPlacesBar", lpReserved=0x00000000, lpValueType=0x5ffffe9c, lpBuffer=5ffffea0:"", lpBufSize=5ffffe94:0) = 0 => 00444a5f
+RegQueryValueExA (hKey=0x00000000, lpValueName=0x004531c0:"NoBackButton", lpReserved=0x00000000, lpValueType=0x5ffffe9c, lpBuffer=5ffffea0:"", lpBufSize=5ffffe94:0) = 0 => 00444a5f
+RegQueryValueExA (hKey=0x00000000, lpValueName=0x004531b4:"NoFileMru", lpReserved=0x00000000, lpValueType=0x5ffffe9c, lpBuffer=5ffffea0:"", lpBufSize=5ffffe94:0) = 0 => 00444a5f
+RegCloseKey (hKey=0x0)
+RegCloseKey (hKey=0x0)
+Unhooked function: EnterCriticalSection (0x00d55000)
+Unhooked function: GetLastError ()
+TlsGetValue(dwTlsIndex = 0) = 00d53a00) => 0x0040e715
+Unhooked function: SetLastError (0x00000000)
+Unhooked function: LeaveCriticalSection (0x00d55000)
+Unhooked function: EnterCriticalSection (0x00d55000)
+Unhooked function: EnterCriticalSection (0x00465b08)
+HeapAlloc(00d52a00, 00000000, 00001000) = 0x00d57200 => 0x00409f34
+Unhooked function: LeaveCriticalSection (0x00465b08)
+Unhooked function: GetLastError ()
+TlsGetValue(dwTlsIndex = 0) = 00d53a00) => 0x0040e715
+Unhooked function: SetLastError (0x00000000)
+Unhooked function: LeaveCriticalSection (0x00d55000)
+Unhooked function: EnterCriticalSection (0x00465b08)
+Unhooked function: GetLastError ()
+TlsGetValue(dwTlsIndex = 0) = 00d53a00) => 0x0040e715
+Unhooked function: SetLastError (0x00000000)
+Unhooked function: GetLastError ()
+TlsGetValue(dwTlsIndex = 0) = 00d53a00) => 0x0040e715
+Unhooked function: SetLastError (0x00000000)
+Unhooked function: LeaveCriticalSection (0x00465b08)
+# Load Library:"KERNEL32.DLL")
+LoadLibraryExW (lpLibFileName=0045044c -> "KERNEL32.DLL") = 70931000 => 0x00403d4d
+GetProcAddress (hModule=0x70931000, lpProcName=0x00450468:"FindResourceA") = 0x7097b05b => 0x00403d51
+# Load Library:"KERNEL32.DLL")
+LoadLibraryExW (lpLibFileName=0045044c -> "KERNEL32.DLL") = 70931000 => 0x00403d4d
+GetProcAddress (hModule=0x70931000, lpProcName=0x0045043c:"LoadResource") = 0x7097a84d => 0x00403d51
+# Load Library:"KERNEL32.DLL")
+LoadLibraryExW (lpLibFileName=0045044c -> "KERNEL32.DLL") = 70931000 => 0x00403d4d
+GetProcAddress (hModule=0x70931000, lpProcName=0x0045042c:"SizeofResource") = 0x70974e7f => 0x00403d51
+# Load Library:"KERNEL32.DLL")
+LoadLibraryExW (lpLibFileName=0045044c -> "KERNEL32.DLL") = 70931000 => 0x00403d4d
+GetProcAddress (hModule=0x70931000, lpProcName=0x0045041c:"LockResource") = 0x70970d29 => 0x00403d51
+FindResourceA(0x00000000, 0x0000014c, 0x0000000a) = 0x00000002 => 0x0040416f
+LoadResourceA(0x00000000, 0x00000002) = 0x00d58200 => 0x0040417b
+SizeofResourceA(0x00000000, 0x00000002) = 0x00014144 => 0x00404187
+LockResourceA(0x00d58200) = 0x00d58200 => 0x00404191
+HeapAlloc(00d52a00, 00000000, 00014144) = 0x00d6c400 => 0x00409f34
+HeapAlloc(00d52a00, 00000000, 00000770) = 0x00d80600 => 0x00409f34
+HeapAlloc(00d52a00, 00000000, 00000770) = 0x00d80e00 => 0x00409f34
+HeapAlloc(00d52a00, 00000000, 00000ed0) = 0x00d81600 => 0x00409f34
+Unhooked function: HeapFree (0x00d52a00, 0x00000000, 0x00d80e00)
+HeapAlloc(00d52a00, 00000000, 00000ed0) = 0x00d82500 => 0x00409f34
+Unhooked function: HeapFree (0x00d52a00, 0x00000000, 0x00d81600)
+HeapAlloc(00d52a00, 00000000, 00000ed0) = 0x00d83400 => 0x00409f34
+Unhooked function: HeapFree (0x00d52a00, 0x00000000, 0x00d80600)
+Unhooked function: HeapFree (0x00d52a00, 0x00000000, 0x00d82500)
+HeapAlloc(00d52a00, 00000000, 00000ed0) = 0x00d84300 => 0x00409f34
+HeapAlloc(00d52a00, 00000000, 000013f0) = 0x00d85200 => 0x00409f34
+Unhooked function: HeapFree (0x00d52a00, 0x00000000, 0x00d84300)
+HeapAlloc(00d52a00, 00000000, 000013f0) = 0x00d86600 => 0x00409f34
+Unhooked function: HeapFree (0x00d52a00, 0x00000000, 0x00d85200)
+HeapAlloc(00d52a00, 00000000, 000013f0) = 0x00d87a00 => 0x00409f34
+Unhooked function: HeapFree (0x00d52a00, 0x00000000, 0x00d83400)
+Unhooked function: HeapFree (0x00d52a00, 0x00000000, 0x00d86600)
+# Load Library:"CRYPT32.DLL")
+CRYPT32.DLL is loaded @ 0x70f18000
+LoadLibraryExW (lpLibFileName=0044eea0 -> "CRYPT32.DLL") = 70f18000 => 0x00403d4d
+GetProcAddress (hModule=0x70f18000, lpProcName=0x0044eeb8:"CryptStringToBinaryA") = 0x70f4dd77 => 0x00403d51
+CryptStringToBinaryA(0x00d87a00 -> "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", 0x000013ec, 0x00000001, 0x00000000, 0x5ffffe88, 0x00000000, 0x00000000) = 0x00000001 => 0x00403dad
+HeapAlloc(00d52a00, 00000000, 00000ef1) = 0x00d88e00 => 0x00409f34
+CryptStringToBinaryA(0x00d87a00 -> "cfQFawvIPwq7dn1/Joay4M/BCq3+RPFYMu3sRlB9NouTlSRTBzrHgxuxCtB7HRaI9iQYOqprYzKW5M7ze9lN9UksQQoiAZh8QuPhA591+fzgrhJFRWC+GHBj+xF40Ac624v1O0e+KBhZcz3r7PFrjsqtdS4ZedezAEbkAB/KQZBwn/JX/1SfiuT6ieLB0bEKWKfzG8AIT+K4n2tPKkDczZWRgtEe5E92Yl/thOR08t+pzmtS5iBT7ei9kXe4cFw8OMrTKtlGSfdk/DTvOzn9rZijiPZJQhB842rpU5h12UOMTO6DRRpOcJz2OgyFzDxrefa3ZdWYsfaENAxK4IPhJdnkhNOWcfTjw7HYoeQ+wcOFibsQvR43R59i9GCZIsVo6/Oi23vQFRsyL3fhoBL7p/0wQ8CMyaccRGz9eBXg7f9EsN3EiiZDVHSHbVtD/LylHVhyj7w9FJxzxZE6CIAQrzF2/CapRYusjo9XTQAZ4Q4MLNKOuuc8IYLHSj7N8gaE9RxcUamRysEecOFXGYE7yCdD8rIH4/bb3rLtsg4aDEL1ZVVVgeqX8sbi671QhU8yJKNUycu5z9FXSEm7w8j7Qlf+v+RJfnErawT5XGHURaTNJOCo90do4xJBDDchtQOIrcuetHqf2ZdfROj0Lf3Ly54YM8mpdi6qUkySlsuGSZdb6lQQZ4Kki7GN5XMnOj1c7TcFJJVedyvmoIgRfaNmNERBSeWDHN23A2Jfq4BWhEIj/nH74XGZD5Riv/+Ct8+uqqTSnvLoOesy7Zgh2mW5y+knKAn06Z1gurepcRqeranPHeCofmesdYGnoaOV1ywIyYO2vYQBMr6ejFZ9kj8RTQZ2yjg1OCGBc9KLYACyBIP+dooQcwuEMXZClJs9fYABzSKDH0zms1wn5LekiLJI+j0o+PXceDUocEvbEkGGqrlvFU8Y3/ompSzoG03Izbp1zWwJ287F0mMRbddUWDcoFzNX4guALp3tjrvDWfvHf1veqvUFk9ArLmsQFytIt+UVIZa8YOlYinTDTgoxM3gpfsRc/2CyczRNGOHhqL9mTWAF94/nkinPBir0UWDvmyl5hiaAV9V659PXpRthu+w6ekhXCiSR7cbFCO4w521Ej04iI2w5VcremvcL8AINpIDA7prRFqAtWNFuC/qSJUbYSV8bZsfbGw7aHD6vh+Y59ZO/gO1Wm8qulb4AEcgRGX+ScbusHcFF4ICicFsAFmm/5S0cyhzyJmEH9flsm6W6z7EUyTsk594dsod9JZFciZY1U//UrY4U6Nsfl1fveCzFyYKMfJOjt+ncvCZ9T0sTqWjdAcBZPbo+Tc5h2cGKRK881OD5JLVPBT1kViOV4OpoMVbI1Up2w8e5QLQKeojPd8oMjNqNuePgqapx/wLjVnpBk5rrPeCDOOHx5uSc9OVS/Dyh1uaqrD9pTzdDq9TMfoPxMCp0hXDKp5qLcTQQa3C1CcGsR/3ypsC8R9oSdggcm2/smxfB0ealGOGV/4pH2vbvvCIgs2YVd4mfMHORwGwXCE9F8rF1CDfgvmH17bjAB4kyJCopucTig8aREQ0Pnwd2DrAbZbkLDiDodIUYG9YZfgTKrtNFxOwJzSZ0bxBcM1iT9MMQkw+s81P6R1OUjRlhI/j2kJu5E43VtC7/pJQTPowxuWwsw0fR+ZPxJGuxiQFeTTf/++98i2tcfvmLblyNZtLgyV+LvSQ6rK578HpixhcK8wq4MDJYc7EKZnQHKY1ss5xSpJol0rmge4XhwXBfvEF9y3XsnSLbXLDKQ1aAc7Ht28bF+BDQ59Tqwb1Q+Q4JN3jNLn2wp1G1r05O2w0vVL9zHXvVyGTnxAXT2YpxhEhDRNgua/nFycmWtBQLMIz/9Ub9KTfdag0PXRxZwd7Q1ucrxCdGL9EUqc34Mb6cIrOuTCHYarZWHDRl2TnJq4M+R4+97p2y/pESPUujL5TbpEuqY9h7wxQu0dEhCfzS97kxgvqMJBb2p7hHtLlDO9+9pe/H4JXqYW3B8pDXExbs7pHZ6gWbxTdK6+ehOo/J+13Bo1n570N3gFVY5sdBU1AHN77o4VPaQGt8i0U3vzPc7GQ9Nwr8FSsMUR0kRtPHxIaau+Eqwez8HEYFpv7ay1tZVBkORbDNqY7uvqIZpMhPfbGg7zaOJArrmP/mqVYBfSOtdBjL1jNxCqneALnLyGUzsNSX/8IWjvoTpc32+Wy71armfSgO9jMgBJnu/GDTinrQar0ZpK41Wt2ROTsVWKL/b8J16i2AW8K5Vyzsz+bT47ZZ4b/XSwKY7tprdfBZ+CnpZCnuyXoZxVjvVDOH+gzIRfFjfVgZBUGtPREJaBIrjVhr59GfyJE92SNcUQ8Upya2THB1zy0/1ycgWkumvZZh/TkW/fGvuppeMcmBlO3L7I9TaWDqf7YTqqHtyCopDg71oSXI2Fq3AO++3ZTK7TSv8AXYJfgBhdbbhB+G32pGud0av6HXBejbcFzkkDdlWg//TmBTmFMIdjQDfgYJk8W5/nvEqzrg1gPkNOSBzFXsWZyndoBI40eu6zNsAzBqNdmQ/KoCSZu0qsJX3pzisac7jpxLsZceZ5c1TSAyfbhHyUvUzXZcET58GOByyN82Mw6zDnrga004CdrNoli+xijstqk50rhAps8zTyfFcNNja+csu4PnRuKSr5HYQBGjK1LUtxm2fCALw0UqI1bXDMVd8vUtnr6R8BEYbbcH1tbfV4VXx97ExiCnNUst6F4aRubzNRYH/KrU8GHWroybWi+T/be5laX/jX8phl7A7jKa3g6fienTLzJ9Rlyt5S5Q/PdYAgXEfjyM+v+c4TJy2QF64ZcJ1ht4W5nIyISazAVgTeG2ZIXQwPrhHo5G2jtMyd2+EL2i4PUBqXxelCZMBnN5LtDbQ/Ld7uuz/FceH4G4M9mUEWbi6ejxINBfc/qT3cz3bI4Fe8tENxk4K13DrCD1pP8gvAsShtmM5ZF3D7m/CyMy5KWIPfvw0SzIwlb3M2VVim3FfGz0IyBB0GKw0IPhmm06uTvS1fQiBfL0KRgg57iC59rlSb4qjlF409ZOUfD4lPjHgLjY9UEmOLTjaPXyd4q9ASJcPx264aWWcWzIG4cmq9XTzsgscPHJ+QLVYr3prxfTiI76KakjSbUfwQ+KvhCSZvzPw0FcyDSdKG8WIt7FSN9nB2WIBOFw8xnkqrVg8bmEGo851678L5/P5OapSv9i7iN7C/99pFUsO0Zdmy0VKPIKKCf3RC3fkPgoyPjNSLfcLhAhLDuznphkPMa5z3LlMHlRJXfn/17iC13xSw4XvD1+5bj0OKGU0E6UzhYGzfs8aAPVLndey2sq6LMp2np/Rf2kZFSp6cqhEHLu5OEYlSM9dbv5KM16V/LK5v0Js8Qb42w5+ZrEuuWwFs8Slf/QSwGkZB8T9MYnU/8rJjsdfSrsoqquAgvSsgXx1xFB+5M50qU4JurnghPqI2nicZU8azvs3eluCEi70n+EpRUV6VsceL50AIvqzlbY93JOEiY3F/RcPraUJ9DQE2zN+ZKJuBMXlKmTJDkq05b8UmTvcKYA7C3eb6/KJfdxOmpI9VfaDmMPed8Tc/Ts2jI7UdWtsKhDJVM7JjrTHwPH43z1aj3zSv8JrzYwTZinZVWOkoXB+GkykgCir7qWrOekfNR2modP+4FsX9ebI+AeOc/92U/LwvrMPVg3nx/JeRtrpQDC38ZeaFlcXTRRcIMrn+IBUDyGHmxq5Me9dpNhnt1NXtCcUZt/wd/+ls9NPhDLPqA522PBXHBYnWzZGFl1qoAEwidY9nTOFx6ohnewCtNRrgNzZLCLVDzKbJNl4iZR6PE0E76620AO3r2Q1mpM9ba9dii3yD0dt+rhxQwhPcyh+u9wrmZuoUJAb5h0yC6zv43sqQ1sD+U0L9eIoRKy0usCpJAV3zMvqWkgInAS5vJmravsfIW3ODo1NIPRuK12a4OHVaxJZRpDgn7VTqsma0ux7CFnpYw3zcGLZ14pM0/j0q4mV7tUOnhZKJDSTrhRQdFRozkSEJIcaXxD/Ndfx66I7zYXLNMNRUjsKh7w0fSBWBM2v0UvNkmWK+nHllJIomXxAWlvd8hFLqpxHrVDL7ZU75Czhq7Z+9BIUh8SRpDJhM1qrKx0VrnhS3NR5d/eE9Hv77vz5KpWTvTi+sEvkJ9fvl7fOkqbcmG5Ugoz4GGah9uB4ZALv1qNAdawbt4nFeKcjVI4wsNh2W8m1nLkNunpXoHjdbsbm0IS2aPxd9PdePHXbCG3OLIUzsYa/5cc2NzIYWxEiJeXzYlxQp8GSL4XFQAYn81xbRMF7b0DmzhUiUrdtX61dqBQJyH/4LGwC1co0YfYDfEyb6GiFGCCopfa0vMBEFi8PHUEOIaJgKS7SEqF0rxOI+svMtyXshAy1tnybnKYZQg3oGWlpd0uB/omovIMwyyNQwQCuIcHqRuR+FnTVq74xsZ53WAQJ3xJAKktXRHdWLMmDoqmAqCQuucK8prLTb93p1ey5HkSV9PoZ6LL//jdi7CNBkSObxPyDJu2zMbIK36sE8q1xrh8GOgII+xQYJN6/KSxyPSL8XjsmJSxg5gIEEKINM5ULbcdbMGFWKXrY6dESu2GL2T0EfnMPtXBQWTNWj47GPYQYhWPyapxddjlC2nvTLX8C6E+xrD4mPXAHoZrJZtcnv9uiIyIEcn1osrThNqpMB2wd8yoTOZsv01zHLllutNWJpHHf5R3C+OEy07hx4m5P1zKz+4K68yCnxMKESBncQFbkWC094k+G9vTQUo3A6hlra9u5iYE2W+5t806y2AHx6QButGGTjyajJ7WZJGy1Vskhk3JfcYnfrIdSiwbmgfh4Bma25nuqxl9RmNam7sXq0psZkajHKDTD0VO1096dipTANBVt+REgxcQByaj8ZA7UWIjCWsZnO1szav1vodT/tcxZfWC+IjwOW9EHl46KIREtG5Mzw35ES1JvMJb4EZd1Q1XoPL0rrPSBGTiNtIak0YrtCi/aZn1Empws6WDiSObkvzEp4jAKNtdaewXPTT9/6+gtHegYCODa7qEoWxGZag+UFkUgebywb2k/80ZxKI=", 0x000013ec, 0x00000001, 0x00d88e00, 0x5ffffe88, 0x00000000, 0x00000000) = 0x00000001 => 0x00403e0b
+# Load Library:"ADVAPI32.DLL")
+LoadLibraryExW (lpLibFileName=0044eed0 -> "ADVAPI32.DLL") = 70a2b000 => 0x00403d4d
+GetProcAddress (hModule=0x70a2b000, lpProcName=0x0044eeec:"CryptAcquireContextA") = 0x70a42f96 => 0x00403d51
+CryptAcquireContextA(0x5ffffd50, 0x00000000="", 0x00000000="", 0x00000001, 0x00000000) = 1 =>0x00403ff1
+CryptAcquireContextA(0x5ffffd50, 0x00000000="", 0x00000000="", 0x00000001, 0x00000008) = 0 =>0x00404008
+# Load Library:"KERNEL32.DLL")
+LoadLibraryExW (lpLibFileName=0045044c -> "KERNEL32.DLL") = 70931000 => 0x00403d4d
+GetProcAddress (hModule=0x70931000, lpProcName=0x0044efc0:"VirtualAlloc") = 0x70983fb6 => 0x00403d51
+VirtualAlloc (lpAddress=0x00000000, dwSize=0x00014144, flAllocationType=0x00001000, flProtect=0x00000040) = 0x00d89d00 => 0x00404358
+VirtualAlloc (lpAddress=0x00000000, dwSize=0x00000ef0, flAllocationType=0x00001000, flProtect=0x00000040) = 0x00d9df00 => 0x0040437f
+# Load Library:"ADVAPI32.DLL")
+LoadLibraryA (lpFileName="ADVAPI32.DLL") = 70a2b000 => 0x00d9e168
+GetProcAddress (hModule=0x70a2b000, lpProcName=0x5ffffb38:"CryptAcquireContextA") = 0x70a42f96 => 0x00d9e179
+GetProcAddress (hModule=0x70a2b000, lpProcName=0x5ffffcbc:"CryptImportKey") = 0x70a45879 => 0x00d9e18a
+GetProcAddress (hModule=0x70a2b000, lpProcName=0x5ffffc94:"CryptEncrypt") = 0x70a4c558 => 0x00d9e19b
+CryptAcquireContextA(0x5ffffca4, 0x00000000="", 0x00000000="", 0x00000001, 0x00000000) = 1 =>0x00d9eb56
+CryptImportKey(0x00000004, 0x5ffffb58, 0x00000134, 0x00000000, 0x00000000, 0x5ffffb50) = 1 => 0x00d9ebbb
+CryptImportKey(0x00000004, 0x5ffffcf0, 0x0000004c, 0x00000005, 0x00000000, 0x5ffffd44) = 0 => 0x00d9ec76
+# Load Library:"ADVAPI32.DLL")
+LoadLibraryA (lpFileName="ADVAPI32.DLL") = 70a2b000 => 0x00d9e168
+GetProcAddress (hModule=0x70a2b000, lpProcName=0x5ffffb38:"CryptAcquireContextA") = 0x70a42f96 => 0x00d9e179
+GetProcAddress (hModule=0x70a2b000, lpProcName=0x5ffffcbc:"CryptImportKey") = 0x70a45879 => 0x00d9e18a
+GetProcAddress (hModule=0x70a2b000, lpProcName=0x5ffffc94:"CryptEncrypt") = 0x70a4c558 => 0x00d9e19b
+CryptAcquireContextA(0x5ffffca4, 0x00000000="", 0x00000000="", 0x00000001, 0x00000000) = 1 =>0x00d9eb56
+CryptImportKey(0x00000006, 0x5ffffb58, 0x00000134, 0x00000000, 0x00000000, 0x5ffffb50) = 1 => 0x00d9ebbb
+CryptImportKey(0x00000006, 0x5ffffcf0, 0x0000004c, 0x00000007, 0x00000000, 0x5ffffd44) = 1 => 0x00d9ec76
+CryptEncrypt(0x00000008, 0x00000000, 0x00000001, 0x00000000, 0x00d89d00, 0x5ffffe60, 0x00014144) = 1 => 0x00d9ec99
+GetNativeSystemInfo(0x5ffffd20) = 0 => 0x00d89ded
+VirtualAlloc (lpAddress=0x00000000, dwSize=0x00016000, flAllocationType=0x00003000, flProtect=0x00000004) = 0x00d9ee00 => 0x00d89e15
+VirtualProtect (lpAddress=00d9fe00, dwSize=00001c00, flNewProtect=00000020, lpflOldProtect=5ffffd14) = 1 => 0x00d8a0ac
+VirtualProtect (lpAddress=00da1e00, dwSize=00011a00, flNewProtect=00000004, lpflOldProtect=5ffffd14) = 1 => 0x00d8a0ac
+VirtualProtect (lpAddress=00db3e00, dwSize=00000200, flNewProtect=00000002, lpflOldProtect=5ffffd14) = 1 => 0x00d8a0ac
+Unhooked function: NtFlushInstructionCache (0xffffffff, 0x00000000, 0x00000000)
+# Load Library:"ADVAPI32.DLL")
+LoadLibraryW (lpFileName="ADVAPI32.DLL") = 70a2b000 => 0x00da0212
+GetModuleFileNameW(0x00000000, lpString=0x5ffff5a0 -> "C:\Users\admin\AppData\Local\easywindow\easywindo", 0x00000103) = 00000031 => 0x00da0339
+Unhooked function: GetCommandLineW ()
+Unhooked function: CreateProcessW (0x5ffff5a0, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x08000004, 0x00000000, 0x00000000, 0x5ffffa74, 0x5ffffaec)
+ExitProcess (0)
+2019-10-09 04:50:42.104954
+2019-10-09 04:53:19.849355
+emulation time: (157) sec
+dump main process at: ./dump/pe.dump
+dump all heaps at: ./dump/heap
+dump hep:./dump/heap/00d56e00_00d56eff
+dump hep:./dump/heap/00d50f00_00d50fff
+dump hep:./dump/heap/00d50e00_00d50eff
+dump hep:./dump/heap/00d54500_00d545ff
+dump hep:./dump/heap/00d81600_00d824ff
+dump hep:./dump/heap/00d51100_00d511ff
+dump hep:./dump/heap/00d54600_00d546ff
+dump hep:./dump/heap/00d50c00_00d50cff
+dump hep:./dump/heap/00d80e00_00d815ff
+dump hep:./dump/heap/00d50b00_00d50bff
+dump hep:./dump/heap/00d52a00_00d539ff
+dump hep:./dump/heap/00d50a00_00d50aff
+dump hep:./dump/heap/00d54000_00d540ff
+dump hep:./dump/heap/00d51e00_00d51eff
+dump hep:./dump/heap/00d84300_00d851ff
+dump hep:./dump/heap/00d58200_00d6c3ff
+dump hep:./dump/heap/00d51f00_00d51fff
+dump hep:./dump/heap/00d51800_00d518ff
+dump hep:./dump/heap/00d6c400_00d805ff
+dump hep:./dump/heap/00d57200_00d581ff
+dump hep:./dump/heap/00d52500_00d525ff
+dump hep:./dump/heap/00d52100_00d521ff
+dump hep:./dump/heap/00d50400_00d504ff
+dump hep:./dump/heap/00d55200_00d552ff
+dump hep:./dump/heap/00d87a00_00d88dff
+dump hep:./dump/heap/00d80600_00d80dff
+dump hep:./dump/heap/00d51a00_00d51aff
+dump hep:./dump/heap/00d50700_00d507ff
+dump hep:./dump/heap/00d57000_00d570ff
+dump hep:./dump/heap/00d56f00_00d56fff
+dump hep:./dump/heap/00d55700_00d557ff
+dump hep:./dump/heap/00d51600_00d516ff
+dump hep:./dump/heap/00d54100_00d543ff
+dump hep:./dump/heap/00d51700_00d517ff
+dump hep:./dump/heap/00d53b00_00d53fff
+dump hep:./dump/heap/00d51000_00d510ff
+dump hep:./dump/heap/00d51b00_00d51bff
+dump hep:./dump/heap/00d51c00_00d51cff
+dump hep:./dump/heap/00d54700_00d547ff
+dump hep:./dump/heap/00d83400_00d842ff
+dump hep:./dump/heap/00d52800_00d528ff
+dump hep:./dump/heap/00d88e00_00d89cff
+dump hep:./dump/heap/00d55400_00d554ff
+dump hep:./dump/heap/00d55500_00d556ff
+dump hep:./dump/heap/00d9ee00_00db4dff
+dump hep:./dump/heap/00d50600_00d506ff
+dump hep:./dump/heap/00d50500_00d505ff
+dump hep:./dump/heap/00d52200_00d522ff
+dump hep:./dump/heap/00d50300_00d503ff
+dump hep:./dump/heap/00d52000_00d520ff
+dump hep:./dump/heap/00d51200_00d512ff
+dump hep:./dump/heap/00d89d00_00d9deff
+dump hep:./dump/heap/00d55100_00d551ff
+dump hep:./dump/heap/00d51d00_00d51dff
+dump hep:./dump/heap/00d55000_00d550ff
+dump hep:./dump/heap/00d55300_00d553ff
+dump hep:./dump/heap/00d50900_00d509ff
+dump hep:./dump/heap/00d51400_00d514ff
+dump hep:./dump/heap/00d52400_00d524ff
+dump hep:./dump/heap/00d85200_00d865ff
+dump hep:./dump/heap/00d50000_00d500ff
+dump hep:./dump/heap/00d82500_00d833ff
+dump hep:./dump/heap/00d56b00_00d56cff
+dump hep:./dump/heap/00d52600_00d526ff
+dump hep:./dump/heap/00d50d00_00d50dff
+dump hep:./dump/heap/00d9df00_00d9edff
+dump hep:./dump/heap/00d54400_00d544ff
+dump hep:./dump/heap/00d53a00_00d53aff
+dump hep:./dump/heap/00d50200_00d502ff
+dump hep:./dump/heap/00d52300_00d523ff
+dump hep:./dump/heap/00d50100_00d501ff
+dump hep:./dump/heap/00d57100_00d571ff
+dump hep:./dump/heap/00d51500_00d515ff
+dump hep:./dump/heap/00d52700_00d527ff
+dump hep:./dump/heap/00d86600_00d879ff
+dump hep:./dump/heap/00d51300_00d513ff
+dump hep:./dump/heap/00d56d00_00d56dff
+dump hep:./dump/heap/00d55900_00d569ff
+dump hep:./dump/heap/00d51900_00d519ff
+dump hep:./dump/heap/00d56a00_00d56aff
+dump hep:./dump/heap/00d50800_00d508ff
+dump hep:./dump/heap/00d54800_00d54fff
+dump hep:./dump/heap/00d55800_00d558ff
+dump hep:./dump/heap/00d52900_00d529ff
+
+-----------------------------
+processing mem dump:./dump/pe.dump
+processing mem dump:./dump/heap/00d50000_00d500ff
+processing mem dump:./dump/heap/00d50100_00d501ff
+processing mem dump:./dump/heap/00d50200_00d502ff
+processing mem dump:./dump/heap/00d50300_00d503ff
+processing mem dump:./dump/heap/00d50400_00d504ff
+processing mem dump:./dump/heap/00d50500_00d505ff
+processing mem dump:./dump/heap/00d50600_00d506ff
+processing mem dump:./dump/heap/00d50700_00d507ff
+processing mem dump:./dump/heap/00d50800_00d508ff
+processing mem dump:./dump/heap/00d50900_00d509ff
+processing mem dump:./dump/heap/00d50a00_00d50aff
+processing mem dump:./dump/heap/00d50b00_00d50bff
+processing mem dump:./dump/heap/00d50c00_00d50cff
+processing mem dump:./dump/heap/00d50d00_00d50dff
+processing mem dump:./dump/heap/00d50e00_00d50eff
+processing mem dump:./dump/heap/00d50f00_00d50fff
+processing mem dump:./dump/heap/00d51000_00d510ff
+processing mem dump:./dump/heap/00d51100_00d511ff
+processing mem dump:./dump/heap/00d51200_00d512ff
+processing mem dump:./dump/heap/00d51300_00d513ff
+processing mem dump:./dump/heap/00d51400_00d514ff
+processing mem dump:./dump/heap/00d51500_00d515ff
+processing mem dump:./dump/heap/00d51600_00d516ff
+processing mem dump:./dump/heap/00d51700_00d517ff
+processing mem dump:./dump/heap/00d51800_00d518ff
+processing mem dump:./dump/heap/00d51900_00d519ff
+processing mem dump:./dump/heap/00d51a00_00d51aff
+processing mem dump:./dump/heap/00d51b00_00d51bff
+processing mem dump:./dump/heap/00d51c00_00d51cff
+processing mem dump:./dump/heap/00d51d00_00d51dff
+processing mem dump:./dump/heap/00d51e00_00d51eff
+processing mem dump:./dump/heap/00d51f00_00d51fff
+processing mem dump:./dump/heap/00d52000_00d520ff
+processing mem dump:./dump/heap/00d52100_00d521ff
+processing mem dump:./dump/heap/00d52200_00d522ff
+processing mem dump:./dump/heap/00d52300_00d523ff
+processing mem dump:./dump/heap/00d52400_00d524ff
+processing mem dump:./dump/heap/00d52500_00d525ff
+processing mem dump:./dump/heap/00d52600_00d526ff
+processing mem dump:./dump/heap/00d52700_00d527ff
+processing mem dump:./dump/heap/00d52800_00d528ff
+processing mem dump:./dump/heap/00d52900_00d529ff
+processing mem dump:./dump/heap/00d52a00_00d539ff
+processing mem dump:./dump/heap/00d53a00_00d53aff
+processing mem dump:./dump/heap/00d53b00_00d53fff
+processing mem dump:./dump/heap/00d54000_00d540ff
+processing mem dump:./dump/heap/00d54100_00d543ff
+processing mem dump:./dump/heap/00d54400_00d544ff
+processing mem dump:./dump/heap/00d54500_00d545ff
+processing mem dump:./dump/heap/00d54600_00d546ff
+processing mem dump:./dump/heap/00d54700_00d547ff
+processing mem dump:./dump/heap/00d54800_00d54fff
+processing mem dump:./dump/heap/00d55000_00d550ff
+processing mem dump:./dump/heap/00d55100_00d551ff
+processing mem dump:./dump/heap/00d55200_00d552ff
+processing mem dump:./dump/heap/00d55300_00d553ff
+processing mem dump:./dump/heap/00d55400_00d554ff
+processing mem dump:./dump/heap/00d55500_00d556ff
+processing mem dump:./dump/heap/00d55700_00d557ff
+processing mem dump:./dump/heap/00d55800_00d558ff
+processing mem dump:./dump/heap/00d55900_00d569ff
+processing mem dump:./dump/heap/00d56a00_00d56aff
+processing mem dump:./dump/heap/00d56b00_00d56cff
+processing mem dump:./dump/heap/00d56d00_00d56dff
+processing mem dump:./dump/heap/00d56e00_00d56eff
+processing mem dump:./dump/heap/00d56f00_00d56fff
+processing mem dump:./dump/heap/00d57000_00d570ff
+processing mem dump:./dump/heap/00d57100_00d571ff
+processing mem dump:./dump/heap/00d57200_00d581ff
+processing mem dump:./dump/heap/00d58200_00d6c3ff
+processing mem dump:./dump/heap/00d6c400_00d805ff
+processing mem dump:./dump/heap/00d80600_00d80dff
+processing mem dump:./dump/heap/00d80e00_00d815ff
+processing mem dump:./dump/heap/00d81600_00d824ff
+processing mem dump:./dump/heap/00d82500_00d833ff
+processing mem dump:./dump/heap/00d83400_00d842ff
+processing mem dump:./dump/heap/00d84300_00d851ff
+processing mem dump:./dump/heap/00d85200_00d865ff
+processing mem dump:./dump/heap/00d86600_00d879ff
+processing mem dump:./dump/heap/00d87a00_00d88dff
+processing mem dump:./dump/heap/00d88e00_00d89cff
+processing mem dump:./dump/heap/00d89d00_00d9deff
+hit sig
+hit final payload
+extract ioc from:./dump/final_payload.dump
+
+c2 list:
+190.18.146.70:80
+187.147.50.167:8080
+80.11.163.139:21
+178.254.6.27:7080
+92.222.125.16:7080
+142.44.162.209:8080
+31.12.67.62:7080
+45.123.3.54:443
+201.250.11.236:50000
+41.220.119.246:80
+86.98.25.30:53
+37.157.194.134:443
+187.144.189.58:50000
+189.209.217.49:80
+31.172.240.91:8080
+104.131.11.150:8080
+59.152.93.46:443
+190.53.135.159:21
+222.214.218.192:8080
+162.243.125.212:8080
+169.239.182.217:8080
+85.104.59.244:20
+95.128.43.213:8080
+190.226.44.20:21
+91.92.191.134:8080
+144.139.247.220:80
+87.230.19.21:8080
+117.197.124.36:443
+173.212.203.26:8080
+206.189.98.125:8080
+45.33.49.124:443
+62.75.187.192:8080
+136.243.177.26:8080
+91.205.215.66:8080
+186.4.172.5:443
+185.129.92.210:7080
+182.176.132.213:8090
+87.106.139.101:8080
+87.106.136.232:8080
+188.166.253.46:8080
+186.4.194.153:993
+37.208.39.59:7080
+185.94.252.13:443
+175.100.138.82:22
+78.24.219.147:8080
+201.212.57.109:80
+217.160.182.191:8080
+186.4.172.5:8080
+103.97.95.218:143
+138.201.140.110:8080
+182.76.6.2:8080
+190.145.67.134:8090
+47.41.213.2:22
+159.65.25.128:8080
+75.127.14.170:8080
+190.201.164.223:53
+94.205.247.10:80
+78.188.105.159:21
+177.246.193.139:20
+149.202.153.252:8080
+88.156.97.210:80
+178.79.161.166:443
+46.105.131.87:80
+211.63.71.72:8080
+179.32.19.219:22
+190.186.203.55:80
+104.236.246.93:8080
+92.222.216.44:8080
+212.71.234.16:8080
+182.176.106.43:995
+181.143.53.227:21
+
+rsa key:
+30 68 02 61 00 b9 3e 2a 51 e0 38 a5 e6 f5 e0 e4 5a ed b2 37 d9 5a 9e 3c 0e 9b a5 b6 3d 5d 2d 82 be 26 b0 d5 5b cb 6a 4e 27 a4 b5 31 94 27 43 0c 65 ef 2e 96 5b 34 f8 92 f7 80 42 12 e6 5b c2 41 d8 cd 8f 0c ec 59 3a 05 4c 24 7d 82 02 d9 15 5b 5a 7f 3f d8 cd 25 65 6f 8c af 52 9a b6 cb 74 87 a2 28 db 51 7d 02 03 01 00 01 

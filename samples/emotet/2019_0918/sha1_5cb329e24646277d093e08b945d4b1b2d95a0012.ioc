@@ -1,0 +1,137 @@
+['/home/seth1002/project/tracecorn_tina/unitracer/lib/windows/dll']
+ADVAPI32.dll is loaded @ 0x70000000
+KERNEL32.dll is loaded @ 0x7009b000
+GDI32.dll is loaded @ 0x7016f000
+USER32.dll is loaded @ 0x701b6000
+ntdll.dll is loaded @ 0x70246000
+stack: 0x5ff00000-0x60000000
+GetModuleHandleA(lpModuleName=0x00000000:"") = 0x00400000
+Unhooked function: GetDC (0x00000001)
+Unhooked function: VkKeyScanW (0x00000001)
+Unhooked function: IsClipboardFormatAvailable (0x00000001)
+Unhooked function: GetKeyboardType (0x00000001)
+Unhooked function: GetWindowContextHelpId (0x00000001)
+Unhooked function: DestroyCursor (0x00000001)
+Unhooked function: GetSystemPaletteUse (0x00000001)
+Unhooked function: IsIconic (0x00000001)
+Unhooked function: VkKeyScanA (0x00000001)
+Unhooked function: CreateSolidBrush (0x00000001)
+Unhooked function: IsWindowEnabled (0x00000001)
+Unhooked function: GetUserNameA (0x5fffff2c, 0x5fffff98)
+Unhooked function: GetStockObject (0x000011ab)
+# patch to bypass trash code -> 0x00401229: 	cmp	dword ptr [ebp - 4], 0x1b2e5
+Unhooked function: GetTextAlign (0x00000000)
+#Load Library:"ADVAPI32")
+LoadLibraryA (lpFileName="ADVAPI32") = 70000000 => 0x00401046
+GetProcAddress (hModule=0x70000000, lpProcName=0x00430588:"RegOpenKeyA") = 0x7002c41b => 0x0040104d
+Unhooked function: LoadCursorW (0x00000000, 0x00000d05)
+RegOpenKeyA (hKey=0x80000000, lpSubkey=00430518:"Interface\{aa5b6a80-b834-11d0-932f-00a0c90dcaa9}", pHandle=0x00431cc0) = 0 => 00401083
+#Load Library:"ADVAPI32")
+LoadLibraryA (lpFileName="ADVAPI32") = 70000000 => 0x00401251
+GetProcAddress (hModule=0x70000000, lpProcName=0x004305a0:"RegQueryValueExA") = 0x700ee5b3 => 0x00401258
+Unhooked function: SetErrorMode (0x00000002)
+#Load Library:"KERNEL32")
+LoadLibraryA (lpFileName="KERNEL32") = 7009b000 => 0x004013e9
+GetProcAddress (hModule=0x7009b000, lpProcName=0x004305c0:"GetModuleHandleA") = 0x700e7f41 => 0x004013f0
+GetModuleHandleA(lpModuleName=0x00000000:"") = 0x00400000
+RegQueryValueExA (hKey=0x00000000, lpValueName=0x00431cbc:"", lpReserved=0x00000000, lpValueType=0x5ffffefc, lpBuffer=5ffffe30:"IActiveScriptParseProcedure32", lpBufSize=5ffffef8:29) = 0 => 00401452
+VirtualAlloc (lpAddress=0x00000000, dwSize=0x00014800, flAllocationType=0x00003000, flProtect=0x00000040) = 0x00d50434 => 0x00401a17
+# patch to bypass trash code -> 0x00d649e6: 	cmp	dword ptr [ebp - 0xc], 0x32dcd5
+GetProcAddress (hModule=0x7009b000, lpProcName=0x5ffffe68:"LoadLibraryExA") = 0x700df7fa => 0x00d640ad
+Unhooked function: LoadLibraryExA (0x5ffffe78, 0x00000000, 0x00000000)
+GetProcAddress (hModule=0x00000000, lpProcName=0x00d50434:"99999934tfserdgfwGetProcAddress") = 0x00000000 => 0x00d640f4
+GetProcAddress (hModule=0x00000000, lpProcName=0x00d50445:"GetProcAddress") = 0x700ee3d3 => 0x00d640f4
+GetProcAddress (hModule=0x00000000, lpProcName=0x00d50456:"VirtualAlloc") = 0x700edfb6 => 0x00d640f4
+GetProcAddress (hModule=0x00000000, lpProcName=0x00d50467:"LoadLibraryExA") = 0x700df7fa => 0x00d640f4
+GetProcAddress (hModule=0x00000000, lpProcName=0x00d50478:"SetFilePointer") = 0x700e8b36 => 0x00d640f4
+GetProcAddress (hModule=0x00000000, lpProcName=0x00d50489:"lstrlenA") = 0x700e5611 => 0x00d640f4
+GetProcAddress (hModule=0x00000000, lpProcName=0x00d5049a:"lstrcatA") = 0x700e519f => 0x00d640f4
+GetProcAddress (hModule=0x00000000, lpProcName=0x00d504ab:"VirtualProtect") = 0x700dd341 => 0x00d640f4
+GetProcAddress (hModule=0x00000000, lpProcName=0x00d504bc:"UnmapViewOfFile") = 0x700e8b13 => 0x00d640f4
+GetProcAddress (hModule=0x00000000, lpProcName=0x00d504cd:"GetModuleHandleA") = 0x700e7f41 => 0x00d640f4
+GetProcAddress (hModule=0x00000000, lpProcName=0x00d504de:"WriteFile") = 0x700ec400 => 0x00d640f4
+GetProcAddress (hModule=0x00000000, lpProcName=0x00d504ef:"CloseHandle") = 0x700e7a7c => 0x00d640f4
+GetProcAddress (hModule=0x00000000, lpProcName=0x00d50500:"VirtualFree") = 0x700ecda4 => 0x00d640f4
+GetProcAddress (hModule=0x00000000, lpProcName=0x00d50511:"GetTempPathA") = 0x70101a65 => 0x00d640f4
+GetProcAddress (hModule=0x00000000, lpProcName=0x00d50522:"CreateFileA") = 0x700e7ee8 => 0x00d640f4
+GetProcAddress (hModule=0x7009b000, lpProcName=0x5ffffe78:"VirtualAlloc") = 0x700edfb6 => 0x00d64160
+VirtualAlloc (lpAddress=0x00000000, dwSize=0x00013880, flAllocationType=0x00003000, flProtect=0x00000040) = 0x00d64c34 => 0x00d64173
+VirtualAlloc (lpAddress=0x00000000, dwSize=0x00017000, flAllocationType=0x00003000, flProtect=0x00000040) = 0x00d784b4 => 0x00d6469b
+VirtualProtect (lpAddress=00001000, dwSize=0000d9a8, flNewProtect=00d50564, lpflOldProtect=5ffffe64)
+VirtualProtect (lpAddress=0000f000, dwSize=00000b2e, flNewProtect=00d50544, lpflOldProtect=5ffffe64)
+VirtualProtect (lpAddress=00010000, dwSize=00004520, flNewProtect=00d5054c, lpflOldProtect=5ffffe64)
+VirtualProtect (lpAddress=00015000, dwSize=00000004, flNewProtect=00d50544, lpflOldProtect=5ffffe64)
+VirtualProtect (lpAddress=00016000, dwSize=00000400, flNewProtect=00d50544, lpflOldProtect=5ffffe64)
+Unhooked function: LoadLibraryExA (0x00d87fd4, 0x00000000, 0x00000000)
+GetProcAddress (hModule=0x00000000, lpProcName=0x00d87fba:"IsProcessorFeaturePresent") = 0x700f26b5 => 0x00d64487
+Unhooked function: UnmapViewOfFile (0x00400000)
+#Invalid memory mapping (UC_ERR_MAP)
+VirtualAlloc (lpAddress=0x00400000, dwSize=0x00017000, flAllocationType=0x00003000, flProtect=0x00000040) = 0x00400000 => 0x00d647a8
+ERROR: Invalid memory fetch (UC_ERR_FETCH_UNMAPPED)
+-----------------------------------------------------
+ eax: 0x00000000  ebx: 0xd22e2014  ecx: 0x00000000  edx: 0x00d50434 
+ edi: 0x77dff00c  esi: 0x00d50000  esp: 0x5ffff0cc  ebp: 0x5ffff2ec 
+ eip: 0x00000000 
+-----------------------------------------------------
+2019-09-18 03:54:50.205349
+2019-09-18 03:55:19.388590
+emulation time: (29) sec
+dump main process at: ./dump/pe.dump
+dump all heaps at: ./dump/heap
+extract ioc from:./dump/pe.dump
+c2 list:
+79.127.57.42:80
+181.81.143.108:80
+190.200.64.180:7080
+198.199.106.229:8080
+151.80.142.33:80
+159.65.241.220:8080
+109.104.79.48:8080
+62.210.142.58:8080
+178.79.163.131:8080
+138.68.106.4:7080
+183.87.87.73:80
+88.250.223.190:8080
+187.155.233.46:443
+81.169.140.14:443
+185.86.148.222:8080
+201.163.74.202:443
+190.230.60.129:80
+159.203.204.126:8080
+46.29.183.211:8080
+186.83.133.253:8080
+190.230.60.129:80
+79.143.182.254:8080
+77.55.211.77:8080
+181.36.42.205:443
+149.62.173.247:8080
+200.57.102.71:8443
+123.168.4.66:22
+200.58.171.51:80
+77.245.101.134:8080
+80.85.87.122:8080
+5.196.35.138:7080
+190.1.37.125:443
+190.19.42.131:80
+179.62.18.56:443
+86.42.166.147:80
+200.21.90.6:8080
+23.92.22.225:7080
+46.21.105.59:8080
+217.199.175.216:8080
+187.188.166.192:80
+217.113.27.158:443
+181.188.149.134:80
+190.221.50.210:8080
+203.25.159.3:8080
+89.188.124.145:443
+91.83.93.124:7080
+109.169.86.13:8080
+183.82.97.25:80
+62.75.143.100:7080
+5.77.13.70:80
+190.117.206.153:443
+91.205.215.57:7080
+
+rsa key:
+30 68 02 61 00 ec e8 4e bc b0 d6 bf 51 c5 12 4f 14 a6 a5 3b 8f aa ec 96 83 65 64 81 29 99 44 73 6d 87 e8 84 ee 13 4e ad bc 9b 29 b9 ee 36 4c 5d 72 93 cc 4d fb 56 ea 5b ef 90 79 5e 82 96 6d 6e 46 cc 00 fe aa 1a a3 fe a9 e1 e3 74 87 8c c8 3b c3 c4 68 9d 02 ff d1 0e e1 cc 7d c9 f4 4b 95 5a 63 74 49 0f d1 02 03 01 00 01 
