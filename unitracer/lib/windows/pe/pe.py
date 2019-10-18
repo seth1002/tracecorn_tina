@@ -107,8 +107,9 @@ class PE(object):
         self.map_data()
 
         self.parse_import_directory()
-        if isdll:
-            self.parse_export_directory()
+        # if isdll:
+        # some exe samples also contains export
+        self.parse_export_directory()
 
 
     def map_data(self):

@@ -939,18 +939,24 @@ def WideCharToMultiByte(ut):
     lpDefaultChar = ut.popstack()
     lpUsedDefaultChar = ut.popstack()
 
+    if cchWideChar == 0xFFFFFFFF:
+        cchWideChar = cbMultiByte
+
     lpWideCharStr_s = ut.emu.mem_read(lpWideCharStr, cchWideChar*2)
+
     res = 0
+    data = ''
 
     if lpMultiByteStr == 0x00:
         res = cchWideChar
     elif lpMultiByteStr != 0x00:
         lpWideCharStr_s = bytes(lpWideCharStr_s)
         data = lpWideCharStr_s.decode('UTF-16LE').encode("ascii","ignore")
+        data = data[:data.find('\x00')+1]
         ut.emu.mem_write(lpMultiByteStr, bytes(data))
         res = cchWideChar
 
-    print('WideCharToMultiByte()')
+    print('WideCharToMultiByte(,,,, lpMultiByteStr = 0x{:08x} -> "{}", ,,)'.format(lpMultiByteStr, data))
     ut.emu.reg_write(UC_X86_REG_EAX, res)
     ut.pushstack(retaddr)
 
