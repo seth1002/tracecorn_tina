@@ -148,7 +148,6 @@ if __name__ == '__main__':
     file_path = sys.argv[1]
     # file_path = './samples/emotet/2019_0919/ac2162d2ae066bf9067ad7f8bf3697a78154ea68'
     # file_path = './samples/emotet/2019_0920/sha1_4d95854d87ab6397b48de09558255e257d4f644d'
-    # file_path = './samples/emotet/2019_1016/88dd0ac77bdb9185d3b776b56417ad7c88bd00c9'
 
     uni = unitracer.Windows()
     uni.verbose = False
