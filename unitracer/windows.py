@@ -461,18 +461,17 @@ class Windows(Unitracer):
         self.ADDRESS = pe.imagebase
         ADDRESS = self.ADDRESS
         dlls = pe.imports.keys()
-        for name, addr in pe.exports.items():
-            # print(name)
-            vaddr = pe.nt_header.OptionalHeader.DataDirectory[0].VirtualAddress
-            size = pe.nt_header.OptionalHeader.DataDirectory[0].Size
-            if addr > vaddr and addr < vaddr+size:
-                # Bug
-                # TO DO: get reall fun addr, hook the real functions address
-                # fwd import funcitons
-                print('fwd fun in PE??? why???')
-            else:
-                dll_funcs[name] = ADDRESS + addr
-                dll_funcs_addrs_fast_tb[ADDRESS+addr] = name
+
+        if hasattr(pe, 'exports'):
+            for name, addr in pe.exports.items():
+                # print(name)
+                vaddr = pe.nt_header.OptionalHeader.DataDirectory[0].VirtualAddress
+                size = pe.nt_header.OptionalHeader.DataDirectory[0].Size
+                if addr > vaddr and addr < vaddr+size:
+                    print('fwd fun in PE??? why???')
+                else:
+                    dll_funcs[name] = ADDRESS + addr
+                    dll_funcs_addrs_fast_tb[ADDRESS+addr] = name
 
 
         self.STACK_SIZE = pe.stacksize

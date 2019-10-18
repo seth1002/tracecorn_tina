@@ -102,3 +102,6 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+dump/pe.dump
+dump/final_payload.dump
+.vscode/settings.json
