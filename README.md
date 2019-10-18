@@ -5,7 +5,7 @@ I just made a few patches and added more API hooks. My goal is to unpack emotet 
 Thank you Icchy! Your tracecorn is great!
 
 # Requirements
-Unicorn - https://github.com/unicorn-engine/unicorn
+pefile
 
 # Tricks
 Emotet will start very large loop which cause high CPU usage. I Patched such trash code.
