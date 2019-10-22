@@ -84,6 +84,15 @@ class Unitracer(object):
         print('=== mem dump ===\n{}\n========\n'.format(' '.join(dump_data)))
 
 
+    def dump_stack(self, count=4):
+        val = self.emu.reg_read(UC_X86_REG_ESP)
+        bData = self.emu.mem_read(val, 4*count)
+
+        print('->stack')
+        for i in range(0, count):
+            print('0x{:08x}'.format(self.unpack(bData[i*4:i*4+4])))
+        print('-----------------------------------------------------')
+
     def dumpregs(self, regs):
         fmt = ''
         idx = 1

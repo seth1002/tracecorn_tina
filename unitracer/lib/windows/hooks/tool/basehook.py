@@ -6267,6 +6267,7 @@ InterlockedDecrement = Hook('InterlockedDecrement', 'LONG', [['LPLONG', 'lpAdden
 HeapSize = Hook('HeapSize', 'int', [['HANDLE', 'hHeap'], ['DWORD', 'dwFlags'], ['LPCVOID', 'lpMem']])
 RtlAllocateHeap = Hook('RtlAllocateHeap', 'PVOID', [['PVOID', 'HeapHandle'], ['ULONG', 'Flags'], ['SIZE_T', 'Size']])
 memset = Hook('memset', 'void', [['void *', 'ptr'], ['int', 'value'], ['size_t', 'num']])
+memcpy = Hook('memcpy', 'void', [['void *', 'dest'], ['const void', '*src'], ['size_t', 'count']])
 PathFindExtensionA = Hook('PathFindExtensionA', 'LPCSTR', [['LPCSTR', 'pszPath']])
 PathFindFileNameA = Hook('PathFindFileNameA', 'LPCSTR', [['LPCSTR', 'pszPath']])
 lstrcpyn = Hook('lstrcpyn', 'LPTSTR', [['LPTSTR', 'lpStr1'], ['LPTSTR', 'lpStr2'], ['int', 'iMaxLength']])

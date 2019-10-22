@@ -291,5 +291,17 @@ def CryptImportKey(ut):
     ut.pushstack(retaddr)
  
 
+def SetFileSecurityW(ut):
+    retaddr = ut.popstack()
+    lpFileName = ut.popstack()
+    SecurityInformation = ut.popstack()
+    pSecurityDescriptor = ut.popstack()
+    # res = 1
+
+    print('SetFileSecurityW() => 0x{:08x}'.format(retaddr))
+    # ut.emu.reg_write(UC_X86_REG_EAX, res)
+    ut.pushstack(retaddr)
+ 
+
 hooks = set(vars().keys()).difference(hooks)
 hooks = [_x for _x in hooks if not _x.startswith('_')]

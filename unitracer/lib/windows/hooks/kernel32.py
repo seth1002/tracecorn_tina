@@ -746,9 +746,12 @@ def GetNLSVersionEx(ut):
 def lstrlen(ut):
     retaddr = ut.popstack()
     lpString = ut.popstack()
-    _str = ut.getstr(lpString)
+    _str = ""
+    if lpString > 0x1000:
+        _str = ut.getstr(lpString)
+
     strlen = len(_str)
-    print('lstrlen (lpString={0:08x} -> "{1}") = {2}'.format(lpString, _str, strlen))
+    print('lstrlen (lpString={:08x} -> "{}") = {} => 0x{:08x}'.format(lpString, _str, strlen, retaddr))
     ut.emu.reg_write(UC_X86_REG_EAX, strlen)
     ut.pushstack(retaddr)
 
@@ -820,7 +823,9 @@ def FindResourceA(ut):
     hModule = ut.popstack()
     lpName = ut.popstack()
     lpType = ut.popstack()
+
     res = 0
+    handle = 0
 
     import pefile
     pe = pefile.PE(ut.pe.fname)
@@ -832,7 +837,7 @@ def FindResourceA(ut):
 
     if lpType not in rt_rcdata_idx_list:
         # find res by string name
-        res_name = ut.getstr(lpType)
+        res_name = ut.getstr(lpType).upper()
         names = [entry.name.string for entry in pe.DIRECTORY_ENTRY_RESOURCE.entries if entry.name]
         rt_rcdata_idx = names.index(res_name)
 
@@ -849,6 +854,15 @@ def FindResourceA(ut):
             ut.other_handle_map[handle] = entry
             ut.pefile_ = pe
             break
+        elif entry.name:
+            name = ut.getstr(lpName).upper()
+            if name == entry.name.string:
+                handle = len(ut.other_handle_map)+1
+                res = handle
+                ut.other_handle_map[handle] = entry
+                ut.pefile_ = pe
+                break
+ 
         
     print('FindResourceA(0x{:08x}, 0x{:08x}, 0x{:08x}) = 0x{:08x} => 0x{:08x}'.format(hModule, lpName, lpType, res, retaddr))
     ut.emu.reg_write(UC_X86_REG_EAX, handle)
@@ -942,21 +956,31 @@ def WideCharToMultiByte(ut):
     if cchWideChar == 0xFFFFFFFF:
         cchWideChar = cbMultiByte
 
-    lpWideCharStr_s = ut.emu.mem_read(lpWideCharStr, cchWideChar*2)
-
     res = 0
     data = ''
 
+    idx = 0
+    buf = ''
+    lpWideCharStr_s = ''
+
+    buf = ut.emu.mem_read(lpWideCharStr+idx*2, 2)
+    while(buf != '\x00\x00'):
+        idx +=1
+        lpWideCharStr_s += buf
+        buf = ut.emu.mem_read(lpWideCharStr+idx*2, 2)
+ 
     if lpMultiByteStr == 0x00:
+        cchWideChar = idx+1
         res = cchWideChar
+
     elif lpMultiByteStr != 0x00:
-        lpWideCharStr_s = bytes(lpWideCharStr_s)
+        lpWideCharStr_s = bytes(lpWideCharStr_s+'\x00\x00')
         data = lpWideCharStr_s.decode('UTF-16LE').encode("ascii","ignore")
         data = data[:data.find('\x00')+1]
         ut.emu.mem_write(lpMultiByteStr, bytes(data))
         res = cchWideChar
 
-    print('WideCharToMultiByte(,,,, lpMultiByteStr = 0x{:08x} -> "{}", ,,)'.format(lpMultiByteStr, data))
+    print('WideCharToMultiByte(,,,, lpMultiByteStr = 0x{:08x} -> "{}", ,,) = 0x{:08x} => 0x{:08x}'.format(lpMultiByteStr, data, res, retaddr))
     ut.emu.reg_write(UC_X86_REG_EAX, res)
     ut.pushstack(retaddr)
 

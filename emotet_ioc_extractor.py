@@ -50,9 +50,25 @@ def search(data, sig):
     return addr
 
 
+def SetWindowsHookExA(ut):
+    print('# Hit my callback hook: SetWindowsHookExA()')
+
+    # patch&remove SetFileSecurityW hook
+    addr = ut.dll_funcs['SetFileSecurityW']
+    ut.emu.mem_write(addr, b'\xc2\x0c\x00')
+    del ut.dll_funcs_addrs_fast_tb[addr]
+
+    keys = ut.pe.exports.keys()
+    addr = ut.dll_funcs[keys[0]]
+    ut.emu.reg_write(UC_X86_REG_EIP, addr)
+
+
 def myins_callback(ut, address, size, userdata):
 
     code = ut.emu.mem_read(address, size)
+
+    # if address == 0x401554:
+    #     print('===>>>{:08x}'.format(ut.emu.reg_read(UC_X86_REG_EAX)))
 
     # bypass layer trash code
     if code and code[0] == 0x81:
@@ -66,9 +82,6 @@ def myins_callback(ut, address, size, userdata):
                     print('# patch to bypass trash code -> {}'.format(ins))
                     inss = '\x83\xfc\00'+'\x90'*(insn.size-3)
                     ut.emu.mem_write(address, inss)
-    
-    # if address == 0x0040B97A:
-    #     ut.emu.reg_write(UC_X86_REG_EAX, 1)
 
 
 def extract_ioc(dump_path, base, is_mem_dump=True):
@@ -146,8 +159,7 @@ if __name__ == '__main__':
 
 
     file_path = sys.argv[1]
-    # file_path = './samples/emotet/2019_0919/ac2162d2ae066bf9067ad7f8bf3697a78154ea68'
-    # file_path = './samples/emotet/2019_0920/sha1_4d95854d87ab6397b48de09558255e257d4f644d'
+    # file_path = './samples/emotet/2019_1021/1b3d01ac27a730a397f70bf85e0d6a3fe6db790cc11641a97a804f60461cc959'
 
     uni = unitracer.Windows()
     uni.verbose = False
@@ -166,6 +178,10 @@ if __name__ == '__main__':
 
     # set my ins hook
     uni.user_ins_callback = myins_callback
+
+    if hasattr(uni.pe, 'exports'):
+        # set my api hook
+        uni.api_hooks['SetWindowsHookExA'] = SetWindowsHookExA
 
     import datetime
     start = datetime.datetime.now() 

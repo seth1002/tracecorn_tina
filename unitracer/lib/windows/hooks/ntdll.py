@@ -62,5 +62,22 @@ def LdrGetProcedureAddress(ut):
     ut.emu.reg_write(UC_X86_REG_EAX, 0)
     ut.pushstack(retaddr)
 
+
+def memcpy(ut):
+    retaddr = ut.popstack()
+    dest = ut.popstack()
+    src = ut.popstack()
+    count = ut.popstack()
+
+    data = ut.emu.mem_read(src, count)
+    ut.emu.mem_write(dest, bytes(data))
+
+    print('memcpy( 0x{:08x}, 0x{:08x}, 0x{:08x}) => 0x{:08x}'.format(dest, src, count, retaddr))
+
+    ut.emu.reg_write(UC_X86_REG_EAX, 0)
+    ut.pushstack(retaddr)
+
+   
+
 hooks = set(vars().keys()).difference(hooks)
 

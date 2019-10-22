@@ -395,6 +395,7 @@ class Windows(Unitracer):
         if self.verbose:
             code = uc.mem_read(address, size)
             self.dumpregs(['eax', 'ebx', 'ecx', 'edx', 'esi', 'edi', 'ebp', 'esp', 'eip'])
+            self.dump_stack()
             for insn in self.cs.disasm(str(code), address):
                 ins = '0x{0:08x}: \t{1}\t{2}\n'.format(insn.address, insn.mnemonic, insn.op_str)
                 print(ins)
