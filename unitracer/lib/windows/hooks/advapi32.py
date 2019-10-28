@@ -124,6 +124,59 @@ def RegQueryValueExA(ut):
     ut.pushstack(retaddr)
 
 
+def CryptAcquireContextW(ut):
+    res = 0
+    defalut_prov_name = 'default_prov_handle'
+    prov_name = ''
+    handle = 0
+
+    retaddr = ut.popstack()
+    phProv = ut.popstack()
+
+    if phProv != 0:
+        handle = ut.unpack(ut.emu.mem_read(phProv, 4))
+        if handle in ut.other_handle_map:
+            res = 0
+        else:
+            handle = 0
+
+    szContainer = ut.popstack()
+    str1 = ''
+    if szContainer != 0:
+        str1 = ut.getstrw(szContainer)
+
+    szProvider = ut.popstack()
+    str2 = ''
+    if szProvider != 0:
+        str2 = ut.getstrw(szProvider)
+
+    dwProvType = ut.popstack()
+    if dwProvType != 0:
+        res = 1
+
+    dwFlags = ut.popstack()
+
+    if szContainer == 0:
+        prov_name = defalut_prov_name
+    else:
+        prov_name = str1
+
+    if handle == 0: # and prov_name not in ut.other_handle_map.values():
+        # create default
+        handle = len(ut.other_handle_map)+1 
+        ut.other_handle_map[handle] = prov_name 
+        ut.emu.mem_write(phProv, ut.pack(handle))
+    else:
+        res = 0
+
+    print('CryptAcquireContextW(0x{:08x}, 0x{:08x}="{}", 0x{:08x}="{}", 0x{:08x}, 0x{:08x}) = {} =>0x{:08x}'.format(
+        phProv, szContainer, str1, szProvider, str2, dwProvType, dwFlags, res, retaddr
+    ))
+
+    ut.emu.reg_write(UC_X86_REG_EAX, res)
+    ut. pushstack(retaddr)
+
+
 def CryptAcquireContextA(ut):
     res = 0
     defalut_prov_name = 'default_prov_handle'
@@ -170,6 +223,85 @@ def CryptAcquireContextA(ut):
     print('CryptAcquireContextA(0x{:08x}, 0x{:08x}="{}", 0x{:08x}="{}", 0x{:08x}, 0x{:08x}) = {} =>0x{:08x}'.format(
         phProv, szContainer, str1, szProvider, str2, dwProvType, dwFlags, res, retaddr
     ))
+
+    ut.emu.reg_write(UC_X86_REG_EAX, res)
+    ut. pushstack(retaddr)
+
+
+def CryptCreateHash(ut):
+
+    retaddr = ut.popstack()
+    hProv = ut.popstack()
+    Algid = ut.popstack()
+    hKey = ut.popstack()
+    dwFlags = ut.popstack()
+    phHash = ut.popstack()
+
+    res = 0
+    val_hHash = {}
+    if Algid == 0x8003:
+        hHash = len(ut.other_handle_map)+1 
+        val_hHash['alg'] = 'MD5'
+        ut.other_handle_map[hHash] = val_hHash 
+        ut.emu.mem_write(phHash, ut.pack(hHash))
+        res = 1
+
+    print('CryptCreateHash(0x{:08x}, 0x{:08x}, 0x{:08x}, 0x{:08x}, 0x{:08x}) = {} =>0x{:08x}'.format(
+        hProv, Algid, hKey, dwFlags, phHash, res, retaddr
+    ))
+
+    ut.emu.reg_write(UC_X86_REG_EAX, res)
+    ut. pushstack(retaddr)
+
+
+def CryptHashData(ut):
+
+    retaddr = ut.popstack()
+    hHash = ut.popstack()
+    pbData = ut.popstack()
+    dwDataLen = ut.popstack()
+    dwFlags = ut.popstack()
+
+    res = 0
+    if hHash in ut.other_handle_map:
+        val_hHash = ut.other_handle_map[hHash]
+        if val_hHash['alg'] == 'MD5':
+            data = ut.emu.mem_read(pbData, dwDataLen)
+            # print(str(data))
+            import md5
+            m = md5.new(data)
+            val_hHash['md5'] = m.digest()
+            res = 1
+
+    ut.emu.reg_write(UC_X86_REG_EAX, res)
+    ut. pushstack(retaddr)
+
+
+def CryptDeriveKey(ut):
+    retaddr = ut.popstack()
+    hProv = ut.popstack()
+    Algid = ut.popstack()
+    hBaseData = ut.popstack()
+    dwFlags = ut.popstack()
+    phKey = ut.popstack()
+
+    val_phKey = {}
+    if hBaseData in ut.other_handle_map:
+        val_hHash = ut.other_handle_map[hBaseData]
+        if Algid == 0x6801:
+            val_phKey['aiKeyAlg'] = 'CALG_RC4'
+            val_phKey['rc4_key'] = val_hHash['md5']
+            # print('# import RC4 key:', [x for x in val_phKey['rc4_key']])
+        else:
+            val_phKey = {}
+
+    if len(val_phKey) >0:
+        handle = len(ut.other_handle_map)+1
+        ut.other_handle_map[handle] = val_phKey
+        ut.emu.mem_write(phKey, ut.pack(handle))
+        res = 1
+    else:
+        res = 0
 
     ut.emu.reg_write(UC_X86_REG_EAX, res)
     ut. pushstack(retaddr)
@@ -222,8 +354,10 @@ def CryptEncrypt(ut):
             res = 1
 
         def convert_key(s):
-            # return [ord(c) for c in s]
-            return [c for c in s]
+            if isinstance(s[0], int):
+                return [c for c in s]
+            else:
+                return [ord(c) for c in s]
 
         rc4_key = val_hKey['rc4_key']
         key = convert_key(rc4_key)
