@@ -273,6 +273,7 @@ def CryptHashData(ut):
             val_hHash['md5'] = m.digest()
             res = 1
 
+    print('CryptHashData()')
     ut.emu.reg_write(UC_X86_REG_EAX, res)
     ut. pushstack(retaddr)
 
@@ -303,6 +304,7 @@ def CryptDeriveKey(ut):
     else:
         res = 0
 
+    print('CryptDeriveKey() => 0x{:08x}'.format(retaddr))
     ut.emu.reg_write(UC_X86_REG_EAX, res)
     ut. pushstack(retaddr)
 

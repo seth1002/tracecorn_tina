@@ -75,6 +75,9 @@ def memcpy(ut):
     print('memcpy( 0x{:08x}, 0x{:08x}, 0x{:08x}) => 0x{:08x}'.format(dest, src, count, retaddr))
 
     ut.emu.reg_write(UC_X86_REG_EAX, 0)
+    ut.pushstack(count)
+    ut.pushstack(src)
+    ut.pushstack(dest)
     ut.pushstack(retaddr)
 
    

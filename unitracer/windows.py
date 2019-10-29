@@ -384,6 +384,9 @@ class Windows(Unitracer):
         api_hooks = self.api_hooks
         dll_funcs = self.dll_funcs
 
+        # if address == 0x00401BB8:
+        #     self.verbose = True
+
         # user ins code hook 
         if self.user_ins_callback:
             self.user_ins_callback(self, address, size, userdata)
@@ -395,7 +398,16 @@ class Windows(Unitracer):
         if self.verbose:
             code = uc.mem_read(address, size)
             self.dumpregs(['eax', 'ebx', 'ecx', 'edx', 'esi', 'edi', 'ebp', 'esp', 'eip'])
-            self.dump_stack()
+
+            # dump stack data
+            dump_size = 0x1c
+            cur_size = self.STACK_BASE-self.getSP()
+            if cur_size/4 < dump_size:
+                count = cur_size/4-1
+            else:
+                count = dump_size
+            self.dump_stack(count=count)
+
             for insn in self.cs.disasm(str(code), address):
                 ins = '0x{0:08x}: \t{1}\t{2}\n'.format(insn.address, insn.mnemonic, insn.op_str)
                 print(ins)

@@ -159,7 +159,7 @@ if __name__ == '__main__':
 
 
     file_path = sys.argv[1]
-    # file_path = '/mnt/e/Test/emotet/2019_10_26/4148708da6464c85e22790bda8162992'
+    # file_path = '/mnt/e/Test/emotet/2019_10_29/0e42d52d9858798ee448bb2a0a7efa62'
 
     uni = unitracer.Windows()
     uni.verbose = False
