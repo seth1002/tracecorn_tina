@@ -76,6 +76,7 @@ def LoadStringA(ut):
 
     res = 0
     string = ""
+    bytes_data = b''
 
     import pefile
 
@@ -102,6 +103,7 @@ def LoadStringA(ut):
             size = len(bytes_data)
             res = size
             ut.emu.mem_write(lpBuffer, bytes_data+'\x00')
+            break
 
     print('LoadStringA(0x{:08x}, 0x{:08x}, 0x{:08x} -> "{}" , 0x{:08x},) = {} => 0x{:08x}'.format(
         hInstance, uID, lpBuffer, bytes_data, cchBufferMax, res, retaddr))
@@ -120,6 +122,7 @@ def LoadStringW(ut):
 
     res = 0
     string = ""
+    bytes_data = b''
 
     import pefile
 
@@ -148,6 +151,7 @@ def LoadStringW(ut):
             buff = ut.heap_alloc(size+2)
             ut.emu.mem_write(buff, bytes_data+'\x00\x00')
             ut.emu.mem_write(lpBuffer, ut.pack(buff))
+            break
 
     print('LoadStringW(0x{:08x}, 0x{:08x}, 0x{:08x} -> "" , 0x{:08x},) = {} => 0x{:08x}'.format(
         hInstance, uID, lpBuffer, cchBufferMax, res, retaddr))
